@@ -3,9 +3,10 @@ import { JSX, useState } from "react";
 import { PubCard } from "./pubCard";
 import { pubs } from "./pubs"
 import Image from "next/image";
-import { useEffect } from "react";
 import AiJail from "../aiJail/page";
+import { useEffect, useContext } from "react";
 import Link from "next/link";
+import { ChoiceContext } from "../layout";
 
 export default function Home() {
 
@@ -15,17 +16,18 @@ export default function Home() {
   })[0];
 
   const [pubList, setPubList] = useState<JSX.Element[]>([]);
+  const {choices, setChoices} = useContext(ChoiceContext);
 
   function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
-    setPubList( p => p.filter( (x,i) => i != pub ) )
+    setPubList( p => p.filter( (x,i) => i != pub ) );
+    setChoices(  [...choices, pub] );
   }
 
   useEffect(() => {
     setPubList( pubs.sort( () => Math.random() - 0.5 ).map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) ) )
     }, [])
-
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-700 items-center">
@@ -39,6 +41,12 @@ export default function Home() {
             {pubList }
             </div>
         </div>
+        <div className = "h-60"></div>
+        <div className = "h-60"></div>
+        <div className = "h-40"></div>
+        <Link href="/pubCrawl" className = "flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5">
+            Make my crawl!
+        </Link>
       </main>
     </div>
   );
