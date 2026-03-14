@@ -6,40 +6,27 @@ import { useState } from 'react';
 
 interface Props {
     info: PubInfo
+    choiceFunc: (choice: String, pub: String) => void
 }
 
-function yesPub()
-{
-  console.log("YES")
-}
-
-function noPub()
-{
-  console.log("NO")
-}
-
-
-
-export const PubCard = ( { info } : Props ) => {
+export const PubCard = ( { info, choiceFunc } : Props ) => {
+    
     const [style, api] = useSpring(() => ({x : 0}));
     const bind = useDrag(({ active, down, movement: [mx], direction: [xDir] }) => {
       if (mx > 500 && !active) 
       {
-        noPub()
-        api.set({x: -2000})
+        console.log("Nah");
+        choiceFunc("No", info.name)
       }
       else if (mx < -500 && !active)
       {
-        yesPub()
+        console.log("Yah");
+        choiceFunc("Yes", info.name)
       }
-      else
-      {
-        api.set({x: down ? mx : 0});
-      }
-      api.start();
+      api.start({x: down ? mx : 0});
     })
     return (
-      <animated.div {...bind()} className="w-4/5 flex flex-col items-left gap-8 px-10 py-10 self-center rounded-xl bg-gray-200 select-none drag-none touch-none" style={style}>
+      <animated.div {...bind()} className={`w-4/5 flex flex-col items-left gap-8 px-10 py-10 self-center rounded-xl bg-gray-200 select-none drag-none touch-none ${info.name.length > 0 ? '' : 'hidden'}`} style={style}>
         <div className="text-6xl font-bold">
           {info.name}
         </div>
