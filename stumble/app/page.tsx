@@ -16,6 +16,9 @@ export default function Home() {
           <Link href="/pubCrawl" className = "flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5">
             View a pub crawl
           </Link>
+          <Link href="/aiJail" className = "flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5">
+            AI Jail
+          </Link>
         </div>
         
 
