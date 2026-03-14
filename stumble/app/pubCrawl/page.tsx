@@ -4,6 +4,8 @@ import { useState } from "react";
 import { calculateRoute, RouteInfo } from "./getRoute";
 import { decodeRoutePolyline } from "./polylineDecoder";
 import MapComponent from "./mapComponent";
+import { useContext } from "react";
+import { ChoiceContext } from "../layout";
 
 export default function PubCrawl() {
   const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
@@ -33,6 +35,8 @@ export default function PubCrawl() {
     setRouteGeoJSON(geoJSON);
   };
 
+  const {choices, setChoices} = useContext(ChoiceContext);
+
   return (
     <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>      
       <button 
@@ -41,6 +45,10 @@ export default function PubCrawl() {
       >
         Show Route
       </button>
+
+      <div>
+        {choices}
+      </div>
       
       <MapComponent routeGeoJSON={routeGeoJSON} />
     </main>

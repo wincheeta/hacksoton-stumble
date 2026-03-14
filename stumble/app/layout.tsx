@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
+"use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { createContext, useContext, useState } from "react";
+import ContextBaby from "./contextBaby";
+import { useState, useContext, createContext, Component} from "react";
+
+export const ChoiceContext = createContext<{choices: number[]; setChoices: (choices: number[]) => void}>({choices: [], setChoices: (x : any) => {}});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,33 +16,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Stumble",
-  description: "Dating app for pub crawls",
-};
-
-export const ChoiceContext = createContext<{choices : number[], setChoices : (choices: number[]) => void}>( {
-  choices: [],
-  setChoices: () => {}
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
-  const [choices, setChoices] = useState([-999]);
+  const [choices, setChoices] = useState<number[]>([]);
 
   return (
     <html lang="en">
-      <ChoiceContext.Provider value={ {choices, setChoices} }>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {children}
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <ChoiceContext.Provider value={ {choices, setChoices} }>
+                      {children}
+          </ChoiceContext.Provider>
         </body>
-      </ChoiceContext.Provider>
     </html>
   );
 }
