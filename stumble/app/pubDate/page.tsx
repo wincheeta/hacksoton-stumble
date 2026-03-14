@@ -13,13 +13,13 @@ export default function Home() {
     return pubs[i]
   })[0];
 
-  function addPubChoice(choice : String, pub: String)
+  function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
-    info.name = ""
+    setPubList(...pubList.slice(pub, 1))
   }
 
-  const [pubList, setPubList] = useState([]);
+  const [pubList, setPubList] : [Element[], Function] = useState([]);
 
   useEffect(() => {
     setPubList( pubs.sort( () => Math.random() - 0.5 ).map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) ) )
