@@ -8,9 +8,10 @@ import Image from 'next/image';
 interface Props {
     info: PubInfo
     choiceFunc: (choice: String, pub: String) => void
+    ind: number
 }
 
-export const PubCard = ( { info, choiceFunc } : Props ) => {
+export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
     
     const [style, api] = useSpring(() => ({x : 0}));
     const bind = useDrag(({ active, down, movement: [mx], direction: [xDir] }) => {
@@ -26,14 +27,17 @@ export const PubCard = ( { info, choiceFunc } : Props ) => {
       }
       api.start({x: down ? mx : 0});
     })
+
+
     return (
-      <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none relative" style={style}>
+      <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none absolute" style={ {...style, ...{zIndex: ind, y: 300} } }>
         <div className='relative'>
             <div className="text-4xl font-bold text-yellow-200 px-5 py-5 rounded-lg w-max absolute bottom-0 left-0">
                 {info.name}
                 {info.wetherspoons ? <Image src={"/spoonsCheck.svg"} alt="Wetherspoons" /> : null}
             </div>
-            <img src={info.image} className="w-full self-center rounded-lg overlap" draggable="false"></img>
+                <img src={info.image} className="w-full self-center rounded-lg overlap max-h-70 object-cover" draggable="false"></img>
+            
         </div>
         <div className="text-2xl text-yellow-200 rounded-lg w-max">
             Position: {info.location}
@@ -44,6 +48,7 @@ export const PubCard = ( { info, choiceFunc } : Props ) => {
             { info.darts ? <img src="/drunkDarts.svg" className='icon'></img> : null }
             { info.pool ? <img src="/drunkPool.svg" className='icon'></img> : null }
             { info.gambling ? <img src="/drunkGambling.svg" className='icon'></img> : null }
+            <div className="icon"></div>
         </div>
       </animated.div>
       )

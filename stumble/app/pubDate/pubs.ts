@@ -2,199 +2,211 @@ import { PubInfo } from "../pubinfo";
 
 export const pubs: PubInfo[] = [
   {
-    "name": "Stags",
-    "location": "The Stag's (40)",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer1gLnEax29bXHI_yFMoi4EQjTpeA-b9UFke0YeKm7nbSZXlqt0HqgOg6HNYQqZ9cxVOmnEGt9JUTwqOp3GBfdwK9GNWOU-oifXieKVZVJHuTunczKo7qXxT6G0GpC928Em-3s=w408-h271-k-no",
-    "rating": 4.2,
-    "opening_times": [
-      "12:00-23:00", 
+    name: "Stags",
+    location: "The Stag's (40)",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer1gLnEax29bXHI_yFMoi4EQjTpeA-b9UFke0YeKm7nbSZXlqt0HqgOg6HNYQqZ9cxVOmnEGt9JUTwqOp3GBfdwK9GNWOU-oifXieKVZVJHuTunczKo7qXxT6G0GpC928Em-3s=w408-h271-k-no",
+    rating: 4.2,
+    opening_times: [
+      "12:00-23:00",
       "12:00-23:00",
       "12:00-00:00",
       "12:00-01:00",
-      "12:00-00:00", 
+      "12:00-00:00",
       "12:00-23:00",
-      "12:00-23:00"
+      "12:00-23:00",
     ],
-    "food_times": [
+    food_times: [
       "No food",
       "No food",
-      "18:00-22:00", 
+      "18:00-22:00",
       "No food",
       "No food",
-      "17:00-22:00", 
-      "Sun 17:00-22"
+      "17:00-22:00",
+      "Sun 17:00-22",
     ],
-    "darts": true,
-    "pool": true,
-    "gambling": false,
-    "wetherspoons": false
+    darts: true,
+    pool: true,
+    gambling: false,
+    wetherspoons: false,
   },
   {
-    "name": "Mitre",
-    "location": "Mitre",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepQ314FejiF7Z8-V-tKMH35omcIkVOmpf3zkmOxHvFNinjRFaSYOyP0KD-Llwy5UW_6asvVvwHWX2JHJV5upoZ7ZJxBSC-TNH9l88GXbkScNGkky78fHu3jxXaznesipjPu0msTJOykzB59=w408-h261-k-no",
-    "rating": 4.1,
-    "opening_times": [
-      "11:00-23:00", 
+    name: "Mitre",
+    location: "Mitre",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepQ314FejiF7Z8-V-tKMH35omcIkVOmpf3zkmOxHvFNinjRFaSYOyP0KD-Llwy5UW_6asvVvwHWX2JHJV5upoZ7ZJxBSC-TNH9l88GXbkScNGkky78fHu3jxXaznesipjPu0msTJOykzB59=w408-h261-k-no",
+    rating: 4.1,
+    opening_times: [
       "11:00-23:00",
       "11:00-23:00",
       "11:00-23:00",
-      "11:00-00:00", 
+      "11:00-23:00",
+      "11:00-00:00",
       "10:00-00:00",
-      "10:00-23:00"
+      "10:00-23:00",
     ],
-    "food_times": [
-      "All day", 
+    food_times: [
       "All day",
       "All day",
       "All day",
-      "All day", 
       "All day",
-      "All day"
+      "All day",
+      "All day",
+      "All day",
     ],
-    "darts": false,
-    "pool": true,
-    "gambling": true,
-    "wetherspoons": false
+    darts: false,
+    pool: true,
+    gambling: true,
+    wetherspoons: false,
   },
   {
-    "name": "The Hobbit",
-    "location": "The Hobbit Pub",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwertIJeHN0SV3ayfzs34vT1p8k7ZOZ3sN2mkBTai5GmGu2q7m8gIGNaXD4-hnFmnBjpYc4xyOYgP9xL697aWYeTq9XQ2emi4g0GJjlGy21gDszimUJq19_qpvolzclfoWu4epK9sfA=w426-h240-k-no",
-    "rating": 4.5,
-    "opening_times": [
-      "17:00-01:00", 
-      "17:00-01:00", 
-      "17:00-01:00", 
-      "17:00-01:00", 
-      "15:00-02:00", 
+    name: "The Hobbit",
+    location: "The Hobbit Pub",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwertIJeHN0SV3ayfzs34vT1p8k7ZOZ3sN2mkBTai5GmGu2q7m8gIGNaXD4-hnFmnBjpYc4xyOYgP9xL697aWYeTq9XQ2emi4g0GJjlGy21gDszimUJq19_qpvolzclfoWu4epK9sfA=w426-h240-k-no",
+    rating: 4.5,
+    opening_times: [
+      "17:00-01:00",
+      "17:00-01:00",
+      "17:00-01:00",
+      "17:00-01:00",
       "15:00-02:00",
-      "17:00-23:00"
+      "15:00-02:00",
+      "17:00-23:00",
     ],
-    "food_times": [
-      "Unknown", 
+    food_times: [
       "Unknown",
       "Unknown",
       "Unknown",
-      "Unknown", 
       "Unknown",
-      "Unknown"
+      "Unknown",
+      "Unknown",
+      "Unknown",
     ],
-    "darts": true,
-    "pool": true,
-    "gambling": false,
-    "wetherspoons": false
+    darts: true,
+    pool: true,
+    gambling: false,
+    wetherspoons: false,
   },
   {
-    "name": "The Crown Inn",
-    "location": "The Crown Inn",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep3Vc6EfXTIh6EtO2_PGOBWuByBJzQRwSNjmaGNQo0C_OqwPC_gwnvPyCtbVTd9rhb95zmZFgtmnh6YdC90oPPsVazrzuvlZp0Inegvbj_gvvP_rQerdfvzP2UulfE5q1o3bAc=w203-h270-k-no",
-    "rating": 4.3,
-    "opening_times": [
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-23:00", 
+    name: "The Crown Inn",
+    location: "The Crown Inn",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep3Vc6EfXTIh6EtO2_PGOBWuByBJzQRwSNjmaGNQo0C_OqwPC_gwnvPyCtbVTd9rhb95zmZFgtmnh6YdC90oPPsVazrzuvlZp0Inegvbj_gvvP_rQerdfvzP2UulfE5q1o3bAc=w203-h270-k-no",
+    rating: 4.3,
+    opening_times: [
       "12:00-23:00",
-      "12:00-23:00"
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
     ],
-    "food_times": [
-      "All day", 
+    food_times: [
       "All day",
       "All day",
       "All day",
-      "All day", 
       "All day",
-      "All day"
+      "All day",
+      "All day",
+      "All day",
     ],
-    "darts": true,
-    "pool": false,
-    "gambling": false,
-    "wetherspoons": false
+    darts: true,
+    pool: false,
+    gambling: false,
+    wetherspoons: false,
   },
   {
-    "name": "Brewhouse & Kitchen",
-    "location": "Brewhouse & Kitchen, Highfield Lane",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepU_ahuS5J2OBOI0r_XbCGbxa_8ZXmrXBYIRtQ5ljUztIvCS228BhBbRAurGSBwuL4Up1s1QT6LzoO_j9klwM662XgkoCyxGliC7rLoHsy8Q-hVcVHe9y4NbivyULGw6NWZGUIO=s2048-v1",
-    "rating": 4.4,
-    "opening_times": [
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-00:00", 
+    name: "Brewhouse & Kitchen",
+    location: "Brewhouse & Kitchen, Highfield Lane",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepU_ahuS5J2OBOI0r_XbCGbxa_8ZXmrXBYIRtQ5ljUztIvCS228BhBbRAurGSBwuL4Up1s1QT6LzoO_j9klwM662XgkoCyxGliC7rLoHsy8Q-hVcVHe9y4NbivyULGw6NWZGUIO=s2048-v1",
+    rating: 4.4,
+    opening_times: [
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
       "12:00-00:00",
-      "12:00-22:00"
-    ],
-    "food_times": [
-      "12:00-23:00", 
-      "12:00-23:00",
-      "12:00-23:00",
-      "12:00-23:00",
-      "12:00-00:00", 
       "12:00-00:00",
-      "12:00-22:00"
+      "12:00-22:00",
     ],
-    "darts": false,
-    "pool": false,
-    "gambling": false,
-    "wetherspoons": false
+    food_times: [
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-22:00",
+    ],
+    darts: false,
+    pool: false,
+    gambling: false,
+    wetherspoons: false,
   },
   {
-    "name": "Charlie's Cabana",
-    "location": "Charlie's Cabana, Portswood Road",
-    "image": "https://lh3.googleusercontent.com/p/AF1QipOG1bo4hIHhTQRmpcjosiMEizG9Gr6A2YFLEW8H=s2048-v1",
-    "rating": 4.3,
-    "opening_times": [
-      "10:00-00:00", 
-      "10:00-00:00", 
-      "10:00-00:00", 
-      "10:00-00:00", 
-      "10:00-00:00", 
+    name: "Charlie's Cabana",
+    location: "Charlie's Cabana, Portswood Road",
+    image:
+      "https://lh3.googleusercontent.com/p/AF1QipOG1bo4hIHhTQRmpcjosiMEizG9Gr6A2YFLEW8H=s2048-v1",
+    rating: 4.3,
+    opening_times: [
       "10:00-00:00",
-      "10:00-00:00"
+      "10:00-00:00",
+      "10:00-00:00",
+      "10:00-00:00",
+      "10:00-00:00",
+      "10:00-00:00",
+      "10:00-00:00",
     ],
-    "food_times": [
-      "N/A", 
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A", 
-      "N/A",
-      "N/A"
-    ],
-    "darts": false,
-    "pool": false,
-    "gambling": false,
-    "wetherspoons": false
+    food_times: ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"],
+    darts: false,
+    pool: false,
+    gambling: false,
+    wetherspoons: false,
   },
   {
-    "name": "The Gordon Arms",
-    "location": "The Gordon Arms, Portswood Road",
-    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerO-WOFP0nWbrV_ucGcjiwWnBTM0Von89D5OFPDYIycgetlnkV6ZmdBIgPZLhj4cWKcdgblLPfHM2dVmAXX4mnqg9Ek7bFIGSA7ujwTHYNel1_sxdOP-Gi4iS7LuI0g-xR5rwvQSw=w203-h152-k-no",
-    "rating": 4.2,
-    "opening_times": [
-      "12:00-23:00", 
-      "12:00-23:00", 
-      "12:00-00:00", 
-      "12:00-00:00", 
-      "12:00-00:00", 
+    name: "The Gordon Arms",
+    location: "The Gordon Arms, Portswood Road",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerO-WOFP0nWbrV_ucGcjiwWnBTM0Von89D5OFPDYIycgetlnkV6ZmdBIgPZLhj4cWKcdgblLPfHM2dVmAXX4mnqg9Ek7bFIGSA7ujwTHYNel1_sxdOP-Gi4iS7LuI0g-xR5rwvQSw=w203-h152-k-no",
+    rating: 4.2,
+    opening_times: [
+      "12:00-23:00",
+      "12:00-23:00",
       "12:00-00:00",
-      "12:00-23:00"
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-23:00",
     ],
-    "food_times": [
-      "N/A", 
-      "N/A",
-      "N/A",
-      "N/A",
-      "N/A", 
-      "N/A",
-      "N/A"
+    food_times: ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"],
+    darts: false,
+    pool: false,
+    gambling: true,
+    wetherspoons: false,
+  },
+  {
+    name: "The Giddy Bridge",
+    location: "16 London Road",
+    image:
+      "https://imgs.search.brave.com/ffX_WJytZT4CCM0JUCDvo_iHXDhlLo7ROLYrYYEfl1w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS1jZG4udHJpcGFk/dmlzb3IuY29tL21l/ZGlhL3Bob3RvLW8v/MDkvNWMvNmUvODgv/dGhlLWdpZGR5LWJy/aWRnZS5qcGc",
+    rating: 3.9,
+    opening_times: [
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-00:00",
+      "12:00-23:00",
     ],
-    "darts": false,
-    "pool": false,
-    "gambling": true,
-    "wetherspoons": false
-  }
-]
+    food_times: ["N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"],
+    darts: false,
+    pool: false,
+    gambling: true,
+    wetherspoons: false,
+  },
+];
