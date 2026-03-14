@@ -1,14 +1,18 @@
 import axios from "axios"
+import { NextApiRequest, NextApiResponse } from "next"
 
 const API_KEY = "AIzaSyByNfpwOQao1-XBgO8pqMx836m2Ll0IPUE"
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent"
 
-export async function gemini(prompt: string): Promise<string> {
+export default async function gemini(
+  req: NextApiRequest,
+  res: NextApiResponse<{ message: string }>
+) {
   try {
-    const res = await axios.post(
+    const apiRes = await axios.post(
       API_URL,
       {
-        contents: [{ parts: [{text: prompt}] }],
+        contents: [{ parts: [{text: req.body.prompt}] }],
       },
       {
         headers: {
@@ -17,9 +21,9 @@ export async function gemini(prompt: string): Promise<string> {
         },
       }
     )
-    return res.data.candidates[0].content.parts[0].text
+    res.status(200).json({ message: apiRes.data.candidates[0].content.parts[0].text })
   } catch (error) {
     console.error("Could not call Gemini: " + error)
-    return prompt
+    res.status(200).json({ message: req.body.prompt })
   }
 }

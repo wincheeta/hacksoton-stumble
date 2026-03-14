@@ -1,16 +1,20 @@
 import axios from "axios"
+import { NextApiRequest, NextApiResponse } from "next"
 
 const API_KEY = "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"
 const API_URL = "https://api.anthropic.com/v1/messages"
 
-export async function claude(prompt: string): Promise<string> {
+export default async function claude(
+  req: NextApiRequest,
+  res: NextApiResponse<{ message: string }>
+) {
   try {
-    const res = await axios.post(
+    const apiRes = await axios.post(
       API_URL,
       {
         model: "claude-sonnet-4-20250514",
         max_tokens: 1024,
-        messages: [{role: "user", content: prompt }]
+        messages: [{role: "user", content: req.body.prompt }]
       },
       {
         headers: {
@@ -20,9 +24,9 @@ export async function claude(prompt: string): Promise<string> {
         },
       }
     )
-    return res.data.content[0].text
+    res.status(200).json({ message: apiRes.data.content[0].text })
   } catch (error) {
     console.error("Could not call Claude: " + error)
-    return prompt
+    res.status(200).json({ message: req.body.prompt })
   }
 }
