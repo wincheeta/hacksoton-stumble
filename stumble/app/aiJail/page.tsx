@@ -14,9 +14,9 @@ export default function AiJail() {
 
   useEffect(() => {
     const f = async () => {
-      const i = Math.floor(Math.random() * models.length)
-      const model = models[i]
-      const res = await axios.post("http://localhost:3000/api/" + model, { prompt: current });
+      const model = models.shift()!
+      models.push(model)
+      const res = await axios.post("http://localhost:3000/api/" + model, { prompt: lastResponse });
       let message = res.data.message
 
       const wasSuccess = lastResponse != message
@@ -24,7 +24,7 @@ export default function AiJail() {
       if (!wasSuccess) {
         message = "< FAILED TO RESPOND >"
       }
-      message = "====================\n[[[[ " + model + " ]]]]\n====================\n" + message
+      message = "[ message from " + model + " ]\n" + message
 
       message += "\n\n\n"
       message = message.replace(/(?:\r\n|\r|\n)/g, '<br>')
@@ -37,7 +37,6 @@ export default function AiJail() {
   })
 
   return (
-    <div dangerouslySetInnerHTML={{__html: contents}}>
-    </div>
+    <div dangerouslySetInnerHTML={{__html: contents}}></div>
   )
 }

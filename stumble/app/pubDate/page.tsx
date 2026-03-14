@@ -5,6 +5,7 @@ import { pubs } from "./pubs"
 import Image from "next/image";
 import { publicEncrypt } from "crypto";
 import { useEffect } from "react";
+import AiJail from "../aiJail/page";
 
 export default function Home() {
 
