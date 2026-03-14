@@ -1,9 +1,8 @@
 'use client'
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { PubCard } from "./pubCard";
 import { pubs } from "./pubs"
 import Image from "next/image";
-import { publicEncrypt } from "crypto";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -13,13 +12,13 @@ export default function Home() {
     return pubs[i]
   })[0];
 
+  const [pubList, setPubList] = useState<JSX.Element[]>([]);
+
   function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
-    setPubList(...pubList.slice(pub, 1))
+    setPubList( p => p.filter( (x,i) => i != pub ) )
   }
-
-  const [pubList, setPubList] : [Element[], Function] = useState([]);
 
   useEffect(() => {
     setPubList( pubs.sort( () => Math.random() - 0.5 ).map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) ) )
