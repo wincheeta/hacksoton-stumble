@@ -5,6 +5,7 @@
   --foreground: #171717;
   --col1: #ffdb5b;
   --col2: #3b3b3b;
+  font-family: "CashMarket", Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
@@ -17,5 +18,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "CashMarket", Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "CashMarket";
+  src: url("/CashMarket.ttf");
 }
