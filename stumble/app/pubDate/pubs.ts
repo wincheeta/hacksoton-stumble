@@ -168,5 +168,33 @@ export const pubs: PubInfo[] = [
     "pool": false,
     "gambling": false,
     "wetherspoons": false
+  },
+  {
+    "name": "The Gordon Arms",
+    "location": "The Gordon Arms, Portswood Road",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerO-WOFP0nWbrV_ucGcjiwWnBTM0Von89D5OFPDYIycgetlnkV6ZmdBIgPZLhj4cWKcdgblLPfHM2dVmAXX4mnqg9Ek7bFIGSA7ujwTHYNel1_sxdOP-Gi4iS7LuI0g-xR5rwvQSw=w203-h152-k-no",
+    "rating": 4.2,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-00:00", 
+      "12:00-00:00", 
+      "12:00-00:00", 
+      "12:00-00:00",
+      "12:00-23:00"
+    ],
+    "food_times": [
+      "N/A", 
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A", 
+      "N/A",
+      "N/A"
+    ],
+    "darts": false,
+    "pool": false,
+    "gambling": true,
+    "wetherspoons": false
   }
 ]
