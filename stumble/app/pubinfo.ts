@@ -8,5 +8,5 @@ export interface PubInfo {
   darts: boolean,
   pool: boolean,
   gambling: boolean,
-  weatherspoons: boolean
+  wetherspoons: boolean
 }

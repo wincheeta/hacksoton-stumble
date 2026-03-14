@@ -27,7 +27,7 @@ export const pubs: PubInfo[] = [
     "darts": true,
     "pool": true,
     "gambling": false,
-    "weatherspoons": false
+    "wetherspoons": false
   },
   {
     "name": "Mitre",
@@ -55,7 +55,7 @@ export const pubs: PubInfo[] = [
     "darts": false,
     "pool": true,
     "gambling": true,
-    "weatherspoons": false
+    "wetherspoons": false
   },
   {
     "name": "The Hobbit",
@@ -72,17 +72,101 @@ export const pubs: PubInfo[] = [
       "17:00-23:00"
     ],
     "food_times": [
-      "11:00-23:00", 
-      "11:00-23:00",
-      "11:00-23:00",
-      "11:00-23:00",
-      "11:00-00:00", 
-      "10:00-00:00",
-      "10:00-23:00"
+      "Unknown", 
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown", 
+      "Unknown",
+      "Unknown"
+    ],
+    "darts": true,
+    "pool": true,
+    "gambling": false,
+    "wetherspoons": false
+  },
+  {
+    "name": "The Crown Inn",
+    "location": "The Crown Inn",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwep3Vc6EfXTIh6EtO2_PGOBWuByBJzQRwSNjmaGNQo0C_OqwPC_gwnvPyCtbVTd9rhb95zmZFgtmnh6YdC90oPPsVazrzuvlZp0Inegvbj_gvvP_rQerdfvzP2UulfE5q1o3bAc=w203-h270-k-no",
+    "rating": 4.3,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00",
+      "12:00-23:00"
+    ],
+    "food_times": [
+      "All day", 
+      "All day",
+      "All day",
+      "All day",
+      "All day", 
+      "All day",
+      "All day"
+    ],
+    "darts": true,
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
+  },
+  {
+    "name": "Brewhouse & Kitchen",
+    "location": "Brewhouse & Kitchen, Highfield Lane",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepU_ahuS5J2OBOI0r_XbCGbxa_8ZXmrXBYIRtQ5ljUztIvCS228BhBbRAurGSBwuL4Up1s1QT6LzoO_j9klwM662XgkoCyxGliC7rLoHsy8Q-hVcVHe9y4NbivyULGw6NWZGUIO=s2048-v1",
+    "rating": 4.4,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-00:00", 
+      "12:00-00:00",
+      "12:00-22:00"
+    ],
+    "food_times": [
+      "12:00-23:00", 
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-00:00", 
+      "12:00-00:00",
+      "12:00-22:00"
     ],
     "darts": false,
-    "pool": true,
-    "gambling": true,
-    "weatherspoons": false
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
+  },
+  {
+    "name": "Charlie's Cabana",
+    "location": "Charlie's Cabana, Portswood Road",
+    "image": "https://lh3.googleusercontent.com/p/AF1QipOG1bo4hIHhTQRmpcjosiMEizG9Gr6A2YFLEW8H=s2048-v1",
+    "rating": 4.3,
+    "opening_times": [
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00",
+      "10:00-00:00"
+    ],
+    "food_times": [
+      "N/A", 
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A", 
+      "N/A",
+      "N/A"
+    ],
+    "darts": false,
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
   }
 ]
