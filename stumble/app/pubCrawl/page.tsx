@@ -1,27 +1,48 @@
-export default function pubCrawl() {
-    return (
-      <div>
-        {/* <div>
-          <title>Distance Matrix Service</title>
+"use client";
 
-          <link rel="stylesheet" type="text/css" href="./style.css" />
-          <script type="module" src="./index.js"></script>
-        </div> */}
-        <div>
-          <div id="container">
-            <div id="map"></div>
-            <div id="sidebar">
-              <h3>Request</h3>
-              <pre id="request"></pre>
-              <h3>Response</h3>
-              <pre id="response"></pre>
-            </div>
-          </div>
-          <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-            defer
-          ></script>
-        </div>
-      </div>
-    )
+import { useState } from "react";
+import { calculateRoute, RouteInfo } from "./getRoute";
+import { decodeRoutePolyline } from "./polylineDecoder";
+import MapComponent from "./mapComponent";
+
+export default function PubCrawl() {
+  const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
+
+  const handleShowRoute = async () => {
+    const route = await calculateRoute(
+      {
+          longitude: -1.404415387462445, // origin giddy
+          latitude: 50.91117832144455,
+      },
+      {
+        longitude:  -1.3951937604809677, // dest hobbit
+        latitude: 50.91894825435929,
+      }
+    );
+    console.log("Raw Route Info:", route);
+    if (!route?.polyline) return;
+
+    const geoJSON = decodeRoutePolyline(
+      route.polyline,
+      route.distance,
+      route.duration
+    );
+
+    console.log("Decoded GeoJSON:", geoJSON);
+
+    setRouteGeoJSON(geoJSON);
+  };
+
+  return (
+    <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>      
+      <button 
+        onClick={handleShowRoute} 
+        style={{ padding: '8px 16px', marginBottom: '16px', cursor: 'pointer' }}
+      >
+        Show Route
+      </button>
+      
+      <MapComponent routeGeoJSON={routeGeoJSON} />
+    </main>
+  );
 }

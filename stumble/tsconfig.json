@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/pubCrawl/maps.jsx", "app/test/page.js"  ],
   "exclude": ["node_modules"]
 }
