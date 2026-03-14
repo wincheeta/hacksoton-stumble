@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Dating app for pub crawls",
 };
 
-export const ChoiceContext = createContext<{choices : number[], setChoices : (choices: number[]) => void}>( {
+const ChoiceContext = createContext<{choices : number[], setChoices : (choices: number[]) => void}>( {
   choices: [],
   setChoices: () => {}
 });
