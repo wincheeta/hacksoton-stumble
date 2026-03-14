@@ -6,7 +6,7 @@ const models = ["chatgpt", "claude", "gemini"]
 
 export default function AiJail() {
 
-  const INITIAL_PROMPT = "Create a prompt to create a prompt to create a prompt to create a prompt to create a prompt to create a prompt."
+  const INITIAL_PROMPT = "Create a prompt to create a prompt to create a prompt to create a prompt to create a prompt to create a prompt.\n\n\n"
 
   const [lastResponse, setLastResponse] = useState(INITIAL_PROMPT)
   const [current, setCurrent] = useState(INITIAL_PROMPT)
@@ -37,6 +37,6 @@ export default function AiJail() {
   })
 
   return (
-    <div dangerouslySetInnerHTML={{__html: contents}}></div>
+    <div className="w-3xs" dangerouslySetInnerHTML={{__html: contents}}></div>
   )
 }
