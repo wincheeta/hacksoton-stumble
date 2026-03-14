@@ -5,10 +5,10 @@ import { pubs } from "./pubs"
 
 export default function Home() {
   
-  const info = useState(() => {{
+  const info = useState(() => {
     const i = Math.floor(Math.random() * pubs.length)
     return pubs[i]
-  }})[0]
+  })[0]
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans items-center">

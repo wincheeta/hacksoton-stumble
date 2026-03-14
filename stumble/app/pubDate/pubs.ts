@@ -112,5 +112,33 @@ export const pubs: PubInfo[] = [
     "pool": false,
     "gambling": false,
     "wetherspoons": false
+  },
+  {
+    "name": "Brewhouse & Kitchen",
+    "location": "Brewhouse & Kitchen, Highfield Lane",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepU_ahuS5J2OBOI0r_XbCGbxa_8ZXmrXBYIRtQ5ljUztIvCS228BhBbRAurGSBwuL4Up1s1QT6LzoO_j9klwM662XgkoCyxGliC7rLoHsy8Q-hVcVHe9y4NbivyULGw6NWZGUIO=s2048-v1",
+    "rating": 4.4,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-00:00", 
+      "12:00-00:00",
+      "12:00-22:00"
+    ],
+    "food_times": [
+      "12:00-23:00", 
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-23:00",
+      "12:00-00:00", 
+      "12:00-00:00",
+      "12:00-22:00"
+    ],
+    "darts": false,
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
   }
 ]
