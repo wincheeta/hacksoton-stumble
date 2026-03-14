@@ -1,27 +1,52 @@
-export default function pubCrawl() {
-    return (
-      <div>
-        {/* <div>
-          <title>Distance Matrix Service</title>
+"use client";
 
-          <link rel="stylesheet" type="text/css" href="./style.css" />
-          <script type="module" src="./index.js"></script>
-        </div> */}
-        <div>
-          <div id="container">
-            <div id="map"></div>
-            <div id="sidebar">
-              <h3>Request</h3>
-              <pre id="request"></pre>
-              <h3>Response</h3>
-              <pre id="response"></pre>
-            </div>
-          </div>
-          <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-            defer
-          ></script>
-        </div>
-      </div>
-    )
+import { useState } from "react";
+import { calculateRoute, RouteInfo } from "./getRoute";
+import { decodeRoutePolyline } from "./polylineDecoder";
+import MapComponent from "./mapComponent";
+
+export default function PubCrawl() {
+  // 1. Create state to hold the decoded GeoJSON
+  const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
+
+  const handleShowRoute = async () => {
+    const route = await calculateRoute(
+      {
+        latitude: -1.404415387462445, // origin
+        longitude: 50.91117832144455,
+      },
+      {
+        latitude: 37.42796133580664, // destination
+        longitude: -122.085749655962,
+      }
+    );
+
+    if (!route?.polyline) return;
+
+    const geoJSON = decodeRoutePolyline(
+      route.polyline,
+      route.distance,
+      route.duration
+    );
+
+    console.log("Route Info:", route);
+    console.log("Decoded GeoJSON:", geoJSON);
+
+    // 2. Save the GeoJSON into state so it triggers a re-render
+    setRouteGeoJSON(geoJSON);
+  };
+
+  return (
+    <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>      
+      <button 
+        onClick={handleShowRoute} 
+        style={{ padding: '8px 16px', marginBottom: '16px', cursor: 'pointer' }}
+      >
+        Show Route
+      </button>
+      
+      {/* 4. Pass the GeoJSON data into the map component as a prop */}
+      <MapComponent routeGeoJSON={routeGeoJSON} />
+    </main>
+  );
 }
