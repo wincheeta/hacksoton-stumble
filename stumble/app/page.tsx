@@ -11,10 +11,8 @@ export default function Home() {
         <Image src="/Stumble.svg" alt="Stumble Logo" width={200} height={200} className="mb-10" />
         <h1 className="text-9xl center text-center w-full mb-20">stumble</h1>
 
-        <Link href="/pubDate">
-          <button className="w-1/2 text-3xl font-bold rounded-xl bg-gray-200 py-5 mb-20">
+        <Link href="/pubDate" className="flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-gray-200 py-5 mb-20">
             Swipe time
-          </button>
         </Link>
 
       </main>

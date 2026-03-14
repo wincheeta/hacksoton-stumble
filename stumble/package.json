@@ -9,10 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@react-spring/web": "^10.0.3",
+    "@use-gesture/react": "^10.3.1",
+    "@vis.gl/react-google-maps": "latest",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "@vis.gl/react-google-maps": "latest"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
