@@ -10,9 +10,7 @@ export const calculateRoute = async (
   origin: { latitude: number; longitude: number },
   destination: { latitude: number; longitude: number }
 ): Promise<RouteInfo | null> => {
-  const apiKey =
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ||
-    process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const apiKey = "AIzaSyDdOFS4s2OAzrb2pRBzltg71Jre2ow28po"
 
   if (!apiKey) return null;
 
@@ -22,27 +20,22 @@ export const calculateRoute = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Goog-Api-Key': "AIzaSyDdOFS4s2OAzrb2pRBzltg71Jre2ow28po",
+        'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask':
           'routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline',
       },
       body: JSON.stringify({
         origin: { location: { latLng: origin } },
         destination: { location: { latLng: destination } },
-        travelMode: 'DRIVE',
-        routingPreference: 'TRAFFIC_AWARE',
+        travelMode: 'WALK',
         units: 'METRIC',
-        computeAlternativeRoutes: false,
-        routeModifiers: {
-          "avoidTolls": false,
-          "avoidHighways": false,
-          "avoidFerries": false
-        },
+        computeAlternativeRoutes: false
       }),
     }
   );
 
   const data = await response.json();
+  console.log("API Response:", data);
   if (!data.routes?.length) return null;
 
   const route = data.routes[0];

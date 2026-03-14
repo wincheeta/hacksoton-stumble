@@ -11,12 +11,12 @@ export default function PubCrawl() {
   const handleShowRoute = async () => {
     const route = await calculateRoute(
       {
-        latitude: -1.404415387462445, // origin giddy
-        longitude: 50.91117832144455,
+          longitude: -1.404415387462445, // origin giddy
+          latitude: 50.91117832144455,
       },
       {
-        latitude:  -1.3951937604809677, // dest hobbit
-        longitude: 50.91894825435929,
+        longitude:  -1.3951937604809677, // dest hobbit
+        latitude: 50.91894825435929,
       }
     );
     console.log("Raw Route Info:", route);
