@@ -30,8 +30,8 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
 
 
     return (
-      <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none absolute" style={ {...style, ...{zIndex: ind, y:300} } }>
-        <div className='relative'>
+      <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none absolute" style={ {...style, ...{zIndex: ind} } }>
+        <div className='flex flex-col w-full self-center select-none drag-none relative'>
             <div className="text-4xl font-bold text-yellow-200 px-5 py-5 rounded-lg w-max absolute bottom-0 left-0">
                 {info.name}
                 {info.wetherspoons ? <Image src={"/spoonsCheck.svg"} alt="Wetherspoons" /> : null}
