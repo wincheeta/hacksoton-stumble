@@ -1,9 +1,8 @@
 'use client'
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { PubCard } from "./pubCard";
 import { pubs } from "./pubs"
 import Image from "next/image";
-import { publicEncrypt } from "crypto";
 import { useEffect } from "react";
 import AiJail from "../aiJail/page";
 import Link from "next/link";
@@ -15,13 +14,13 @@ export default function Home() {
     return pubs[i]
   })[0];
 
+  const [pubList, setPubList] = useState<JSX.Element[]>([]);
+
   function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
-    setPubList(...pubList.slice(pub, 1))
+    setPubList( p => p.filter( (x,i) => i != pub ) )
   }
-
-  const [pubList, setPubList] : [Element[], Function] = useState([]);
 
   useEffect(() => {
     setPubList( pubs.sort( () => Math.random() - 0.5 ).map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) ) )
@@ -35,8 +34,9 @@ export default function Home() {
         </Link>
         <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">
         <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-10 w-1/2 self-center" />
-        <div className="flex flex-col w-full items-center gap-10 isolate">
+        <div className="flex flex-col w-full items-center gap-10">
             <div className="w-full self-center select-none drag-none relative">
+            {pubList }
             </div>
         </div>
       </main>
