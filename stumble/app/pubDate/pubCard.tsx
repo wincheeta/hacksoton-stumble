@@ -3,6 +3,7 @@ import { useDrag } from '@use-gesture/react';
 import { useSpring, animated } from '@react-spring/web';
 import { PubInfo } from "../pubinfo"
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface Props {
     info: PubInfo
@@ -39,11 +40,24 @@ export const PubCard = ( { info } : Props ) => {
       api.start();
     })
     return (
-      <animated.div {...bind()} className="w-4/5 flex flex-col items-left gap-8 px-10 py-10 self-center rounded-xl bg-gray-200 select-none drag-none touch-none" style={style}>
-        <div className="text-6xl font-bold">
-          {info.name}
+      <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none relative" style={style}>
+        <div className='relative'>
+            <div className="text-4xl font-bold text-yellow-200 px-5 py-5 rounded-lg w-max absolute bottom-0 left-0">
+                {info.name}
+                {info.wetherspoons ? <Image src={"/spoonsCheck.svg"} alt="Wetherspoons" /> : null}
+            </div>
+            <img src={info.image} className="w-full self-center rounded-lg overlap" draggable="false"></img>
         </div>
-        <img src={info.image} className="w-max self-center rounded-lg" draggable="false"></img>
+        <div className="text-2xl text-yellow-200 rounded-lg w-max">
+            Position: {info.location}
+            <br></br>
+            Rating: {info.rating} / 5.0
+        </div>
+        <div className = "flex flex-row gap-5 justify-start">
+            { info.darts ? <img src="/drunkDarts.svg" className='icon'></img> : null }
+            { info.pool ? <img src="/drunkPool.svg" className='icon'></img> : null }
+            { info.gambling ? <img src="/drunkGambling.svg" className='icon'></img> : null }
+        </div>
       </animated.div>
       )
 }

@@ -3,9 +3,10 @@ import { useState } from "react";
 import { PubCard } from "./pubCard";
 import { pubs } from "./pubs"
 import Image from "next/image";
+import { publicEncrypt } from "crypto";
 
 export default function Home() {
-  
+
   const info = useState(() => {
     const i = Math.floor(Math.random() * pubs.length)
     return pubs[i]
