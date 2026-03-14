@@ -6,21 +6,20 @@ import { decodeRoutePolyline } from "./polylineDecoder";
 import MapComponent from "./mapComponent";
 
 export default function PubCrawl() {
-  // 1. Create state to hold the decoded GeoJSON
   const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
 
   const handleShowRoute = async () => {
     const route = await calculateRoute(
       {
-        latitude: -1.404415387462445, // origin
+        latitude: -1.404415387462445, // origin giddy
         longitude: 50.91117832144455,
       },
       {
-        latitude: 37.42796133580664, // destination
-        longitude: -122.085749655962,
+        latitude:  -1.3951937604809677, // dest hobbit
+        longitude: 50.91894825435929,
       }
     );
-
+    console.log("Raw Route Info:", route);
     if (!route?.polyline) return;
 
     const geoJSON = decodeRoutePolyline(
@@ -29,10 +28,8 @@ export default function PubCrawl() {
       route.duration
     );
 
-    console.log("Route Info:", route);
     console.log("Decoded GeoJSON:", geoJSON);
 
-    // 2. Save the GeoJSON into state so it triggers a re-render
     setRouteGeoJSON(geoJSON);
   };
 
@@ -45,7 +42,6 @@ export default function PubCrawl() {
         Show Route
       </button>
       
-      {/* 4. Pass the GeoJSON data into the map component as a prop */}
       <MapComponent routeGeoJSON={routeGeoJSON} />
     </main>
   );

@@ -13,16 +13,14 @@ const MapComponent: React.FC<MapComponentProps> = ({ routeGeoJSON }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
 
-  // 1. Initialize the map (Run once)
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
 
     mapRef.current = new maplibregl.Map({
       container: mapContainerRef.current,
-      // Using a detailed street map style
       style: `https://api.maptiler.com/maps/uk-openzoomstack-road/style.json?key=U8lzjiOI789TRj3qlYQ7`,
       center: [-1.404415387462445,50.91117832144455], // Southampton coordinates
-      zoom: 13, // Zoomed in close to see buildings
+      zoom: 13,
     //   pitch: 45, // Tilt the camera to see 3D buildings better
     //   bearing: -17.6, 
     });
@@ -33,11 +31,9 @@ const MapComponent: React.FC<MapComponentProps> = ({ routeGeoJSON }) => {
     };
   }, []);
 
-  // 2. Watch for routeGeoJSON changes and draw the route
   useEffect(() => {
     const map = mapRef.current;
     
-    // Make sure the map exists, the map has finished loading its base style, and we have data
     if (!map || !routeGeoJSON) return;
 
     const addRoute = () => {
@@ -48,7 +44,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ routeGeoJSON }) => {
         map.removeSource('route');
       }
 
-      // Add your source and layers
+      // Add source and layers
       map.addSource('route', {
         type: 'geojson',
         data: routeGeoJSON,
@@ -77,14 +73,13 @@ const MapComponent: React.FC<MapComponentProps> = ({ routeGeoJSON }) => {
       });
     };
 
-    // If the map style is still loading, wait for it. Otherwise, add immediately.
     if (map.isStyleLoaded()) {
       addRoute();
     } else {
       map.once('load', addRoute);
     }
 
-  }, [routeGeoJSON]); // This effect triggers whenever routeGeoJSON changes
+  }, [routeGeoJSON]);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
