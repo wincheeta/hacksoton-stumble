@@ -1,10 +1,10 @@
 "use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ContextBaby from "./contextBaby";
-import { useState, useContext, createContext, Component} from "react";
+import { useState, createContext } from "react";
+import { PubInfo } from "./pubinfo";
 
-export const ChoiceContext = createContext<{choices: number[]; setChoices: (choices: number[]) => void}>({choices: [], setChoices: (x : any) => {}});
+export const ChoiceContext = createContext<{choices: PubInfo[]; setChoices: (choices: PubInfo[]) => void}>({choices: [], setChoices: (x : any) => {}});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const [choices, setChoices] = useState<number[]>([]);
+  const [choices, setChoices] = useState<PubInfo[]>([]);
 
   return (
     <html lang="en">

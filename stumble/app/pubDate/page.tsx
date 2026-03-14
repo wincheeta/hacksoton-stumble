@@ -21,8 +21,9 @@ export default function Home() {
   function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
+    const pubInfo = pubs[pub]
     setPubList( p => p.filter( (x,i) => i != pub ) );
-    setChoices(  [...choices, pub] );
+    setChoices(  [...choices, pubInfo] );
   }
 
   useEffect(() => {
