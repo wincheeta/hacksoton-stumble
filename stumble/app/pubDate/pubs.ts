@@ -140,5 +140,33 @@ export const pubs: PubInfo[] = [
     "pool": false,
     "gambling": false,
     "wetherspoons": false
+  },
+  {
+    "name": "Charlie's Cabana",
+    "location": "Charlie's Cabana, Portswood Road",
+    "image": "https://lh3.googleusercontent.com/p/AF1QipOG1bo4hIHhTQRmpcjosiMEizG9Gr6A2YFLEW8H=s2048-v1",
+    "rating": 4.3,
+    "opening_times": [
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00", 
+      "10:00-00:00",
+      "10:00-00:00"
+    ],
+    "food_times": [
+      "N/A", 
+      "N/A",
+      "N/A",
+      "N/A",
+      "N/A", 
+      "N/A",
+      "N/A"
+    ],
+    "darts": false,
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
   }
 ]
