@@ -29,9 +29,9 @@ export default function Home() {
     <div className="flex min-h-screen items-center justify-center bg-neutral-700 items-center">
         <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">
         <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-10 w-1/2 self-center" />
-        <div className="flex flex-col w-full items-center gap-10 isolate">
+        <div className="flex flex-col w-full items-center gap-10">
             <div className="w-full self-center select-none drag-none relative">
-            {pubList}
+            {pubList }
             </div>
         </div>
       </main>
