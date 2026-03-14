@@ -36,6 +36,12 @@ export default function PubCrawl() {
   };
 
   const {choices, setChoices} = useContext(ChoiceContext);
+  console.log(choices);
+
+  function makeList()
+  {
+    return choices.map(c => <li>{c.name}</li>);
+  }
 
   return (
     <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>      
@@ -45,10 +51,10 @@ export default function PubCrawl() {
       >
         Show Route
       </button>
-
-      <div>
-        {choices}
-      </div>
+      
+      <ul>
+        {makeList()}
+      </ul>
       
       <MapComponent routeGeoJSON={routeGeoJSON} />
     </main>
