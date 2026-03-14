@@ -17,7 +17,7 @@ export const PubCard = ( { info } : Props ) => {
         <div className="text-6xl font-bold">
           {info.name}
         </div>
-        <img src={info.image} className="w-max" draggable="false"></img>
+        <img src={info.image} className="w-max self-center rounded-lg" draggable="false"></img>
       </animated.div>
       )
 }
