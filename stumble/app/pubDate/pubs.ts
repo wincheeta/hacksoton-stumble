@@ -27,7 +27,7 @@ export const pubs: PubInfo[] = [
     "darts": true,
     "pool": true,
     "gambling": false,
-    "weatherspoons": false
+    "wetherspoons": false
   },
   {
     "name": "Mitre",
@@ -55,7 +55,7 @@ export const pubs: PubInfo[] = [
     "darts": false,
     "pool": true,
     "gambling": true,
-    "weatherspoons": false
+    "wetherspoons": false
   },
   {
     "name": "The Hobbit",
@@ -72,17 +72,45 @@ export const pubs: PubInfo[] = [
       "17:00-23:00"
     ],
     "food_times": [
-      "11:00-23:00", 
-      "11:00-23:00",
-      "11:00-23:00",
-      "11:00-23:00",
-      "11:00-00:00", 
-      "10:00-00:00",
-      "10:00-23:00"
+      "Unknown", 
+      "Unknown",
+      "Unknown",
+      "Unknown",
+      "Unknown", 
+      "Unknown",
+      "Unknown"
     ],
-    "darts": false,
+    "darts": true,
     "pool": true,
-    "gambling": true,
-    "weatherspoons": false
+    "gambling": false,
+    "wetherspoons": false
+  },
+  {
+    "name": "The Crown Inn",
+    "location": "The Crown Inn",
+    "image": "https://www.google.co.uk/maps/place/The+Crown+Inn/@50.9317775,-1.4007855,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgIDD8ITZDg!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHVAwep3Vc6EfXTIh6EtO2_PGOBWuByBJzQRwSNjmaGNQo0C_OqwPC_gwnvPyCtbVTd9rhb95zmZFgtmnh6YdC90oPPsVazrzuvlZp0Inegvbj_gvvP_rQerdfvzP2UulfE5q1o3bAc%3Dw203-h270-k-no!7i3024!8i4032!4m7!3m6!1s0x487474086dd38ad3:0xc1516b791422bdbe!8m2!3d50.9317775!4d-1.4007855!10e5!16s%2Fg%2F1td52xdq?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D#",
+    "rating": 4.3,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00", 
+      "12:00-23:00",
+      "12:00-23:00"
+    ],
+    "food_times": [
+      "All day", 
+      "All day",
+      "All day",
+      "All day",
+      "All day", 
+      "All day",
+      "All day"
+    ],
+    "darts": true,
+    "pool": false,
+    "gambling": false,
+    "wetherspoons": false
   }
 ]
