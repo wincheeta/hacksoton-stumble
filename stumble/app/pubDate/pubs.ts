@@ -1,0 +1,88 @@
+import { PubInfo } from "../pubinfo";
+
+export const pubs: PubInfo[] = [
+  {
+    "name": "Stags",
+    "location": "The Stag's (40)",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwer1gLnEax29bXHI_yFMoi4EQjTpeA-b9UFke0YeKm7nbSZXlqt0HqgOg6HNYQqZ9cxVOmnEGt9JUTwqOp3GBfdwK9GNWOU-oifXieKVZVJHuTunczKo7qXxT6G0GpC928Em-3s=w408-h271-k-no",
+    "rating": 4.2,
+    "opening_times": [
+      "12:00-23:00", 
+      "12:00-23:00",
+      "12:00-00:00",
+      "12:00-01:00",
+      "12:00-00:00", 
+      "12:00-23:00",
+      "12:00-23:00"
+    ],
+    "food_times": [
+      "No food",
+      "No food",
+      "18:00-22:00", 
+      "No food",
+      "No food",
+      "17:00-22:00", 
+      "Sun 17:00-22"
+    ],
+    "darts": true,
+    "pool": true,
+    "gambling": false,
+    "weatherspoons": false
+  },
+  {
+    "name": "Mitre",
+    "location": "Mitre",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepQ314FejiF7Z8-V-tKMH35omcIkVOmpf3zkmOxHvFNinjRFaSYOyP0KD-Llwy5UW_6asvVvwHWX2JHJV5upoZ7ZJxBSC-TNH9l88GXbkScNGkky78fHu3jxXaznesipjPu0msTJOykzB59=w408-h261-k-no",
+    "rating": 4.1,
+    "opening_times": [
+      "11:00-23:00", 
+      "11:00-23:00",
+      "11:00-23:00",
+      "11:00-23:00",
+      "11:00-00:00", 
+      "10:00-00:00",
+      "10:00-23:00"
+    ],
+    "food_times": [
+      "All day", 
+      "All day",
+      "All day",
+      "All day",
+      "All day", 
+      "All day",
+      "All day"
+    ],
+    "darts": false,
+    "pool": true,
+    "gambling": true,
+    "weatherspoons": false
+  },
+  {
+    "name": "The Hobbit",
+    "location": "The Hobbit Pub",
+    "image": "https://lh3.googleusercontent.com/gps-cs-s/AHVAwertIJeHN0SV3ayfzs34vT1p8k7ZOZ3sN2mkBTai5GmGu2q7m8gIGNaXD4-hnFmnBjpYc4xyOYgP9xL697aWYeTq9XQ2emi4g0GJjlGy21gDszimUJq19_qpvolzclfoWu4epK9sfA=w426-h240-k-no",
+    "rating": 4.5,
+    "opening_times": [
+      "17:00-01:00", 
+      "17:00-01:00", 
+      "17:00-01:00", 
+      "17:00-01:00", 
+      "15:00-02:00", 
+      "15:00-02:00",
+      "17:00-23:00"
+    ],
+    "food_times": [
+      "11:00-23:00", 
+      "11:00-23:00",
+      "11:00-23:00",
+      "11:00-23:00",
+      "11:00-00:00", 
+      "10:00-00:00",
+      "10:00-23:00"
+    ],
+    "darts": false,
+    "pool": true,
+    "gambling": true,
+    "weatherspoons": false
+  }
+]

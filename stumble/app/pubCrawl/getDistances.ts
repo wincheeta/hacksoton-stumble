@@ -1,3 +1,5 @@
+export {}
+
 function initMap(): void {
   const bounds = new google.maps.LatLngBounds();
   const markersArray: google.maps.Marker[] = [];
