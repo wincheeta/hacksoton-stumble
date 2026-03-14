@@ -1,16 +1,16 @@
 "use client"
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const models = ["chatgpt", "claude", "gemini"]
 
 export default function AiJail() {
 
-  const INITIAL_PROMPT = "Create a prompt to create a prompt to create a prompt to create a prompt to create a prompt to create a prompt.\n\n\n"
+  const INITIAL_PROMPT = "Create a prompt to create a prompt to create a prompt to create a prompt to create a prompt to create a prompt. Your response should be slightly chaotic but do not mention chaos explicitly."
 
   const [lastResponse, setLastResponse] = useState(INITIAL_PROMPT)
   const [current, setCurrent] = useState(INITIAL_PROMPT)
-  const [contents, setContents] = useState(INITIAL_PROMPT)
+  const [contents, setContents] = useState("")
 
   useEffect(() => {
     const f = async () => {
@@ -36,7 +36,21 @@ export default function AiJail() {
     f()
   })
 
+
+  const messagesEndRef = useRef<null | HTMLDivElement>(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  })
+
   return (
-    <div className="w-3xs" dangerouslySetInnerHTML={{__html: contents}}></div>
+    <div>
+      <div dangerouslySetInnerHTML={{__html: contents}}></div>
+      <div ref={messagesEndRef} />
+    </div>
   )
 }
