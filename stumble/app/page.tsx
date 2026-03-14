@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PubCard } from "./pubDate/pubCard";
 import Link from "next/link";
 
 

@@ -1,13 +1,13 @@
 'use client'
 import { useDrag } from '@use-gesture/react';
 import { useSpring, animated } from '@react-spring/web';
+import { PubInfo } from "../pubinfo"
 
 interface Props {
-    pubName : string,
-    image : string
+    info: PubInfo
 }
 
-export const PubCard = ( {pubName, image} : Props ) => {
+export const PubCard = ( { info } : Props ) => {
     const [style, api] = useSpring(() => ({x : 0}));
     const bind = useDrag(({ down, movement: [mx]}) => {
       api.start({x: down ? mx : 0});
@@ -15,9 +15,9 @@ export const PubCard = ( {pubName, image} : Props ) => {
     return (
       <animated.div {...bind()} className="w-4/5 flex flex-col items-left gap-8 px-10 py-10 self-center rounded-xl bg-gray-200 select-none drag-none" style={style}>
         <div className="text-6xl font-bold">
-          {pubName}
+          {info.name}
         </div>
-        <img src={image} className="w-max" draggable="false"></img>
+        <img src={info.image} className="w-max" draggable="false"></img>
       </animated.div>
       )
 }
