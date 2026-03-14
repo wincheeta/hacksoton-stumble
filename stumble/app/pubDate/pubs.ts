@@ -399,7 +399,7 @@ export const pubs: PubInfo[] = [
   {
     name: "The Dirty Barrel",
     location: "The Dirty Barrel, Bedford Place",
-    image: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/68/15/97/caption.jpg?w=500&h=-1&s=1",
     rating: 4.8,
     opening_times: [
       "Closed",
@@ -535,5 +535,33 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+  },
+  {
+    name: "Standing Order",
+    location: "The Standing Order, High street",
+    image: "https://www.jdwetherspoon.com/wp-content/uploads/2024/06/202-feature.png",
+    rating: 4.0,
+    opening_times: [
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-01:00",
+      "08:00-01:00",
+      "08:00-00:00",
+    ],
+    food_times: [
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-00:00",
+      "08:00-01:00",
+      "08:00-01:00",
+      "08:00-00:00",
+    ],
+    darts: false,
+    pool: false,
+    gambling: true,
+    wetherspoons: true,
   },
 ];
