@@ -95,14 +95,15 @@ const MapComponent: React.FC<MapData> = ({
     markersRef.current.forEach((marker) => marker.remove());
     const newMarkers: maplibregl.Marker[] = [];
 
-    if (otherPubs.length > 0) {
+    
+    if (otherPubs.length >= 0) {
         const pubsToDraw = optimisedPubs.length > 0 
             ? optimisedPubs.map((index) => otherPubs[index])
-            : otherPubs;
-        
+            : [...otherPubs]; 
             
         pubsToDraw.unshift(origin!);
         pubsToDraw.push(destination!);
+        console.log("Pubs to draw:", pubsToDraw);
         pubsToDraw.forEach((pub, i) => {
             const markerEl = createNumberedMarker(i + 1);
             const popup = new maplibregl.Popup({ offset: 25 }).setHTML(`<strong>Pub ${i + 1}: ${pub.name}</strong>`);

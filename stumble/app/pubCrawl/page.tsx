@@ -1,18 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { calculateRoute, Pub } from "./getRoute";
 import { decodeRoutePolyline } from "./polylineDecoder";
 import MapComponent from "./mapComponent";
-import { useContext } from "react";
 import { ChoiceContext } from "../layout";
 import RouteViewer from "./routeViewer";
 import { PubInfo } from "../pubinfo";
 import { pubs } from "../pubDate/pubs";
 import { getFurthest } from "./calculate_route";
-import { all } from "axios";
-import { set } from "@elevenlabs/elevenlabs-js/core/schemas";
-
 
 export default function PubCrawl() {
     const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
@@ -20,6 +16,8 @@ export default function PubCrawl() {
     const [destination, setDestination] = useState<Pub | null>(null);
     const [otherPubs, setotherPubs] = useState<Pub[]>([]);
     const [optimisedPubs, setoptimisedPubs] = useState<number[]>([]);
+    const [routeSequence, setRouteSequence] = useState<Pub[]>([]); 
+    
     const {choices, setChoices} = useContext(ChoiceContext);
 
     const extractLocation = (pubIndex: number): Pub => {
@@ -32,12 +30,17 @@ export default function PubCrawl() {
     }
 
     const handleShowRoute = async () => {
+      if (choices.length < 2) {
+          alert("Please select at least 2 pubs first!");
+          return;
+      }
+
       const allPubs : Pub[] = choices.map( p => extractLocation(p) );
 
       const furthest: [Pub, Pub] = getFurthest(allPubs);
       const start : Pub = furthest[0];
       const end : Pub = furthest[1];
-      const other : Pub[] = allPubs.slice(2);
+      const other: Pub[] = allPubs.filter(pub => pub !== start && pub !== end);
 
       setOrigin(start);
       setDestination(end);
@@ -47,8 +50,14 @@ export default function PubCrawl() {
 
       if (!route?.polyline) return;
       
-      // console.log("Optimal Order:", route.optimizedOrder); 
-      setoptimisedPubs(route.optimizedOrder || []);
+      const optOrder = route.optimizedOrder || [];
+      setoptimisedPubs(optOrder);
+
+      const orderedIntermediates = optOrder.length > 0 
+          ? optOrder.map((index) => other[index])
+          : other;
+      
+      setRouteSequence([start, ...orderedIntermediates, end]);
 
       const geoJSON = decodeRoutePolyline(
           route.polyline,
@@ -57,11 +66,12 @@ export default function PubCrawl() {
       );
 
       setRouteGeoJSON(geoJSON);
-      };
+    };
 
   return (
-    <div className="inline-flex w-full min-h-screen items-center justify-center bg-neutral-700 items-center">
-      <RouteViewer order={optimisedPubs}></RouteViewer>
+    <div className="inline-flex w-full min-h-screen items-center justify-center bg-neutral-700">
+      <RouteViewer routeSequence={routeSequence} /> 
+      
       <main className="flex gap-10 min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">      
         <button 
           onClick={handleShowRoute} 
@@ -76,7 +86,7 @@ export default function PubCrawl() {
           destination={destination}
           otherPubs={otherPubs}
           optimisedPubs={optimisedPubs}
-          />
+        />
       </main>
     </div>
   );
