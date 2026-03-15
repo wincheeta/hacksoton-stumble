@@ -21,13 +21,19 @@ export default function Home() {
   function addPubChoice(choice : String, pub : number)
   {
     console.log(choice, pub);
+    console.log(pubs)
     const pubInfo = pubs[pub]
-    setPubList( p => p.filter( (x,i) => i != pub ) );
-    setChoices(  [...choices, pubInfo] );
+    console.log(pubInfo)
+    setChoices( p => p.concat(pubInfo) );
+    setPubList( p => p.filter( (x,i) => x.key != pub.toString() ) );
+    console.log(choices)
   }
 
   useEffect(() => {
-    setPubList( pubs.sort( () => Math.random() - 0.5 ).map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) ) )
+    const indList = Array.from({ length: pubs.length}, (_, i) => i);
+    indList.sort(() => Math.random() - 0.5);
+    const indexList = pubs.map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) );
+    setPubList(indexList);
     }, [])
 
   return (
