@@ -6,6 +6,7 @@ import { decodeRoutePolyline } from "./polylineDecoder";
 import MapComponent from "./mapComponent";
 import { useContext } from "react";
 import { ChoiceContext } from "../layout";
+import RouteViewer from "./routeViewer";
 
 export default function PubCrawl() {
   const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
@@ -55,21 +56,24 @@ export default function PubCrawl() {
   }
 
   return (
-    <main style={{ fontFamily: 'sans-serif', padding: '2rem' }}>      
-      <button 
-        onClick={handleShowRoute} 
-        style={{ padding: '8px 16px', marginBottom: '16px', cursor: 'pointer' }}
-      >
-        Show Route
-      </button>
-      
-      <MapComponent 
-        routeGeoJSON={routeGeoJSON}
-        origin={origin}
-        destination={destination}
-        otherPubs={otherPubs}
-        optimisedPubs={optimisedPubs}
-         />
-    </main>
+    <div className="flex min-h-screen items-center justify-center bg-neutral-700 items-center">
+      <main className="flex gap-10 min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">      
+        <button 
+          onClick={handleShowRoute} 
+          className="flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5"
+        >
+          Show Route
+        </button>
+        
+        <MapComponent 
+          routeGeoJSON={routeGeoJSON}
+          origin={origin}
+          destination={destination}
+          otherPubs={otherPubs}
+          optimisedPubs={optimisedPubs}
+          />
+      </main>
+      <RouteViewer></RouteViewer>
+    </div>
   );
 }

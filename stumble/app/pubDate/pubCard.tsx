@@ -18,7 +18,7 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
         apiKey: "sk_c3f70490da750098ba9bc8b9c13dcdc931a987deb68a6994",
     });
     
-    useEffect(() => {
+    /*useEffect(() => {
         const f = async () => {
             const audio = await elevenlabs.textToSpeech.convert(
                 'lKMAeQD7Brvj7QCWByqK',
@@ -32,7 +32,7 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
             await play(audio);
         }
         f()
-    })
+    })*/
     
     const [style, api] = useSpring(() => ({x : 0}));
     const bind = useDrag(({ active, down, movement: [mx], direction: [xDir] }) => {

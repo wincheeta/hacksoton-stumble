@@ -127,7 +127,7 @@ const MapComponent: React.FC<MapData> = ({
   }, [routeGeoJSON, origin, destination, otherPubs, optimisedPubs]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div className='w-full h-full'>
       <div
         ref={mapContainerRef}
         style={{ width: '100%', maxWidth: '800px', height: '500px', borderRadius: '12px' }}

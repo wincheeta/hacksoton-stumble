@@ -27,7 +27,7 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const indList = Array(pubs.length).fill(0).map( (x,i) => i ).sort(() => Math.random() - 0.5);
+    const indList = Array(pubs.length).fill(0).map( (_,i) => i ).sort(() => Math.random() - 0.5);
     const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x) => addPubChoice(indList[j], x) } key={j} ind={indList[j]}/> ) );
     setOrder( indList )
     setPubList( indexList );
