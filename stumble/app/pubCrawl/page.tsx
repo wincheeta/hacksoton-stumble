@@ -9,7 +9,9 @@ import { ChoiceContext } from "../layout";
 import RouteViewer from "./routeViewer";
 import { PubInfo } from "../pubinfo";
 import { pubs } from "../pubDate/pubs";
+import { getFurthest } from "./calculate_route";
 import { all } from "axios";
+import { set } from "@elevenlabs/elevenlabs-js/core/schemas";
 
 
 export default function PubCrawl() {
@@ -31,23 +33,11 @@ export default function PubCrawl() {
 
     const handleShowRoute = async () => {
       const allPubs : Pub[] = choices.map( p => extractLocation(p) );
-      console.log(choices);
-      // console.log(allPubs[0]);
-      // console.log({name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 })
 
-      const start : Pub = allPubs[0];
-      const end : Pub = allPubs[1];
+      const furthest: [Pub, Pub] = getFurthest(allPubs);
+      const start : Pub = furthest[0];
+      const end : Pub = furthest[1];
       const other : Pub[] = allPubs.slice(2);
-      // const start : Pub = {name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 }; 
-      // const end : Pub = {name: "jesters", latitude: 50.91819492126443, longitude: -1.3952395822603454, };
-      
-      // const other : Pub[]= [
-      //     { name: "giddy", latitude: 50.91099766491743, longitude:  -1.4044846195047285 }, 
-      //     { name: "hobbit", latitude: 50.91917963101398, longitude: -1.395235639641838 },
-      //     { name: "london house brewery", latitude: 50.91258583312872, longitude: -1.403600277820489 },
-      //     { name: "the stag", latitude: 50.93473942771124, longitude: -1.3973102315799517},
-      //     { name: "brewhouse and kitchen", latitude: 50.93140505168394, longitude: -1.3998451997593504}
-      // ];
 
       setOrigin(start);
       setDestination(end);
