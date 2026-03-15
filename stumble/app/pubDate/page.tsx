@@ -21,13 +21,14 @@ export default function Home() {
 
   function addPubChoice(index : number, id : number)
   {
-    setChoices( [...choices, id ] );
-    setPubList( p => {p.splice(id,1); return p} );
-    console.log(index, id )
+    setChoices( p => p.concat(id) );
+    setPubList( p => p.filter( i => (id-1).toString() != i.key ) );
+    console.log(index, id)
   }
 
+  const indList = Array(pubs.length).fill(0).map( (x,i) => i ).sort(() => Math.random() - 0.5);
+
   useEffect(() => {
-    const indList = Array(pubs.length).fill(0).map( (x,i) => i ).sort(() => Math.random() - 0.5);
     const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x) => addPubChoice(indList[j], x) } key={j} ind={indList[j]}/> ) );
     setOrder( indList )
     setPubList( indexList );
