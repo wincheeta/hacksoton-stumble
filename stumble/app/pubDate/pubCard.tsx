@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 interface Props {
     info: PubInfo
-    choiceFunc: (choice: String, pub: number) => void
+    choiceFunc: (id: number) => void
     ind: number
 }
 
@@ -39,12 +39,11 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
       if (mx > 500 && !active) 
       {
         console.log("Nah");
-        choiceFunc("No", ind)
       }
       else if (mx < -500 && !active)
       {
         console.log("Yah");
-        choiceFunc("Yes", ind)
+        choiceFunc(info.id)
       }
       api.start({x: down ? mx : 0});
     })

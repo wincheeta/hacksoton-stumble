@@ -1,12 +1,12 @@
 'use client'
-import { JSX, useState } from "react";
+import { useState } from "react";
 import { PubCard } from "./pubCard";
 import { pubs } from "./pubs"
 import Image from "next/image";
-import AiJail from "../aiJail/page";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, JSX } from "react";
 import Link from "next/link";
 import { ChoiceContext } from "../layout";
+import { PubInfo } from "../pubinfo";
 
 export default function Home() {
 
@@ -16,24 +16,22 @@ export default function Home() {
   })[0];
 
   const [pubList, setPubList] = useState<JSX.Element[]>([]);
+  const [order, setOrder] = useState<number[]>([]);
   const {choices, setChoices} = useContext(ChoiceContext);
 
-  function addPubChoice(choice : String, pub : number)
+  function addPubChoice(index : number, id : number)
   {
-    console.log(choice, pub);
-    console.log(pubs)
-    const pubInfo = pubs[pub]
-    console.log(pubInfo)
-    setChoices( p => p.concat(pubInfo) );
-    setPubList( p => p.filter( (x,i) => x.key != pub.toString() ) );
-    console.log(choices)
+    setChoices( [...choices, id ] );
+    setPubList( p => {p.splice(id,1); return p} );
+    console.log(index, id )
   }
 
   useEffect(() => {
-    const indList = Array.from({ length: pubs.length}, (_, i) => i);
-    indList.sort(() => Math.random() - 0.5);
-    const indexList = pubs.map( (i, ind) => ( <PubCard info={i} choiceFunc={addPubChoice} key={ind} ind={ind}/> ) );
-    setPubList(indexList);
+    const indList = Array(pubs.length).fill(0).map( (x,i) => i ).sort(() => Math.random() - 0.5);
+    const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x) => addPubChoice(indList[j], x) } key={j} ind={indList[j]}/> ) );
+    setOrder( indList )
+    setPubList( indexList );
+    console.log( indexList, indList)
     }, [])
 
   return (

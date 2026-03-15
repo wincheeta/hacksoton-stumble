@@ -2,6 +2,7 @@ import { PubInfo } from "../pubinfo";
 
 export const pubs: PubInfo[] = [
   {
+    id: 1,
     name: "Stags",
     location: "The Stag's (40)",
     image:
@@ -31,6 +32,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 2,
     name: "Mitre",
     location: "Mitre",
     image:
@@ -60,6 +62,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 3,
     name: "The Hobbit",
     location: "The Hobbit Pub",
     image:
@@ -89,6 +92,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 4,
     name: "The Crown Inn",
     location: "The Crown Inn",
     image:
@@ -118,6 +122,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 5,
     name: "Brewhouse & Kitchen",
     location: "Brewhouse & Kitchen, Highfield Lane",
     image:
@@ -147,6 +152,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 6,
     name: "Charlie's Cabana",
     location: "Charlie's Cabana, Portswood Road",
     image:
@@ -168,6 +174,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 7,
     name: "The Gordon Arms",
     location: "The Gordon Arms, Portswood Road",
     image:
@@ -189,9 +196,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 8,
     name: "Bookshop Alehouse",
     location: "The Bookshop Alehouse, Portswood Road",
-    image: "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA4NDItMjM2Ni0zMzM1LTI1MDEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE0OTksImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
+    image:
+      "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA4NDItMjM2Ni0zMzM1LTI1MDEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE0OTksImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
     rating: 4.5,
     opening_times: [
       "Closed",
@@ -209,6 +218,7 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 9,
     name: "The Giddy Bridge",
     location: "16 London Road",
     image:
@@ -238,9 +248,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: true,
   },
   {
+    id: 10,
     name: "Clowns & Jesters",
     location: "Clowns Wine Bar and Jesters Nightclub, Bevois Valley Road",
-    image: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
     rating: 0.0,
     opening_times: [
       "19:00-03:00",
@@ -258,9 +270,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 11,
     name: "Guide Dog",
     location: "The Guide Dog, Earls Road",
-    image: "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA0NzAtMjEyMy00MDAwLTMwMDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
+    image:
+      "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA0NzAtMjEyMy00MDAwLTMwMDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
     rating: 4.5,
     opening_times: [
       "16:00-23:00",
@@ -286,9 +300,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 12,
     name: "The Shooting Star",
     location: "The Shooting Star, Bevois Valley Road",
-    image: "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA1NjItMjUzOC0yOTU4LTIyMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE0OTksImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
+    image:
+      "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA1NjItMjUzOC0yOTU4LTIyMTguanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE0OTksImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
     rating: 4.4,
     opening_times: [
       "19:00-03:00",
@@ -300,19 +316,21 @@ export const pubs: PubInfo[] = [
       "13:00-03:00",
     ],
     food_times: [
-      "23:00-02:00", 
-      "Closed", 
-      "Closed", 
-      "19:00-02:00", 
-      "19:00-02:00", 
-      "19:00-02:00", 
-      "Closed"],
+      "23:00-02:00",
+      "Closed",
+      "Closed",
+      "19:00-02:00",
+      "19:00-02:00",
+      "19:00-02:00",
+      "Closed",
+    ],
     darts: false,
     pool: true,
     gambling: false,
     wetherspoons: false,
   },
   {
+    id: 13,
     name: "5 Rivers Sport Bar & Grill",
     location: "5 Rivers Sport Bar & Grill, Bevois Valley Road",
     image: "https://www.dailyecho.co.uk/resources/images/11369536.jpg/",
@@ -341,9 +359,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 14,
     name: "The Rockstone",
     location: "The Rockstone, Onslow Road",
-    image: "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDAzOTUtMzY5MS00MDAwLTMwMDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
+    image:
+      "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDAzOTUtMzY5MS00MDAwLTMwMDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
     rating: 4.5,
     opening_times: [
       "12:00-00:00",
@@ -369,9 +389,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 15,
     name: "Bottle & Stoat",
     location: "Bottle & Stoat, Bedford Place",
-    image: "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
+    image:
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
     rating: 4.8,
     opening_times: [
       "12:00-22:00",
@@ -397,9 +419,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 16,
     name: "The Dirty Barrel",
     location: "The Dirty Barrel, Bedford Place",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/68/15/97/caption.jpg?w=500&h=-1&s=1",
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/68/15/97/caption.jpg?w=500&h=-1&s=1",
     rating: 4.8,
     opening_times: [
       "Closed",
@@ -425,9 +449,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 17,
     name: "Shenanigans",
     location: "Shenanigans, Carlton Place",
-    image: "https://shenanigansirishsportsbar.co.uk/wp-content/uploads/2022/08/Shenanigans-Outside-Area2.jpg",
+    image:
+      "https://shenanigansirishsportsbar.co.uk/wp-content/uploads/2022/08/Shenanigans-Outside-Area2.jpg",
     rating: 4.6,
     opening_times: [
       "17:00-00:00",
@@ -453,9 +479,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 18,
     name: "The Cricketers",
     location: "The Cricketers, Carlton Place",
-    image: "https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,h_1200,q_75,w_1200/https://tsedmsmedia.newmindmedia.com/wsimgs/Exteriors-305_318660773.jpg",
+    image:
+      "https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,h_1200,q_75,w_1200/https://tsedmsmedia.newmindmedia.com/wsimgs/Exteriors-305_318660773.jpg",
     rating: 4.5,
     opening_times: [
       "17:00-00:00",
@@ -481,9 +509,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 19,
     name: "Overdraft Beer & Tacos",
     location: "Overdraft Beer & Tacos, Carlton Place",
-    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/54/c0/0b/caption.jpg?w=1200&h=1200&s=1",
+    image:
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/54/c0/0b/caption.jpg?w=1200&h=1200&s=1",
     rating: 4.8,
     opening_times: [
       "12:00-22:00",
@@ -509,9 +539,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 20,
     name: "Raven & Bine",
     location: "Raven & Bine, Carlton Place",
-    image: "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA5MTYtMzY2NS0zMjAwLTI0MDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
+    image:
+      "https://d2s8km3brsjp0y.cloudfront.net/eyJidWNrZXQiOiJ3aGF0cHViIiwia2V5IjoiSEFTXC9IQVMrMDA5MTYtMzY2NS0zMjAwLTI0MDAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoyMDAwLCJoZWlnaHQiOjE1MDAsImZpdCI6ImNvdmVyIn0sInJvdGF0ZSI6bnVsbH19",
     rating: 4.4,
     opening_times: [
       "16:00-23:00",
@@ -537,9 +569,11 @@ export const pubs: PubInfo[] = [
     wetherspoons: false,
   },
   {
+    id: 21,
     name: "Standing Order",
     location: "The Standing Order, High street",
-    image: "https://www.jdwetherspoon.com/wp-content/uploads/2024/06/202-feature.png",
+    image:
+      "https://www.jdwetherspoon.com/wp-content/uploads/2024/06/202-feature.png",
     rating: 4.0,
     opening_times: [
       "08:00-00:00",

@@ -47,7 +47,7 @@ export default function PubCrawl() {
         };
 
   const {choices, setChoices} = useContext(ChoiceContext);
-//   console.log(choices);
+  console.log(choices);
 
   function makeList()
   {
