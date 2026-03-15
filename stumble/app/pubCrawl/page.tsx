@@ -40,7 +40,7 @@ export default function PubCrawl() {
 
   function makeList()
   {
-    return choices.map(c => <li>{c.name}</li>);
+    return choices.map(c => <li key={c.name}>{c.name}</li>);
   }
 
   return (
