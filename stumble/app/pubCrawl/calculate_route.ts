@@ -52,6 +52,30 @@ export const getFurthestfrom = (origin: Pub, pubs: Pub[]): Pub => {
     return furthest;
 };
 
+export const getClosestfrom = (origin: Pub, pubs: Pub[]): Pub => {
+    if (!pubs || pubs.length < 2) {
+        return {name: "jesters", latitude: 50.91819492126443, longitude: -1.3952395822603454, }; 
+    }
+
+    let minDistance = 99999999999;
+    let closest: Pub = pubs[0];
+
+    for (let i = 0; i < pubs.length; i++) {
+            const p2 = pubs[i];
+            
+            const distance = Math.sqrt(
+                Math.pow(origin.latitude - p2.latitude, 2) + 
+                Math.pow(origin.longitude - p2.longitude, 2)
+            );
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                closest = p2;
+            }
+    }
+    return closest;
+};
+
 export const getLatestClosingPub = (selectedPubs: Pub[]): Pub => {
     if (!selectedPubs || selectedPubs.length === 0) {
         return {name: "jesters", latitude: 50.91819492126443, longitude: -1.3952395822603454, }; 
