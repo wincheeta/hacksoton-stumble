@@ -407,7 +407,7 @@ export const pubs: PubInfo[] = [
     name: "Bottle & Stoat",
     location: "Bottle & Stoat, Bedford Place",
     image:
-      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwepsNm_MvX5JbP5PBcfMdgnn95yWas8KVNTtJvsuzUg5Tc2XNedA4qUYWkwcd-tDeMNHbDk2YgmU0ZSKJfj_MFhkkVDfa_ul7cQ43M4OXPKKv_QJF4o5_Afbsk4VqjCALBijoN-mCQ=w203-h270-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/AHVAwerQ3pNN2hNLDh8NS8d_AFYJk4f-KJMnx3-ZA5SjNbcicwtGRFjOxdkNYYBmmDww4oipoNo4iuerO7pIB7tQ2gNuQcVrKMOWcpvaSHcBJjzh-Fa4VD_EhOqy2EVQpWiQHaK4UfIDL73tn5r-=s680-w680-h510-rw",
     rating: 4.8,
     opening_times: [
       "12:00-22:00",
