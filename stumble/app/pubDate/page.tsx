@@ -33,6 +33,7 @@ export default function Home() {
     setOrder( indList )
     setPubList( indexList );
     console.log( indexList, indList)
+    console.log(choices);
     }, [])
 
   return (

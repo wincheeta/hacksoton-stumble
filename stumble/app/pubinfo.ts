@@ -9,5 +9,6 @@ export interface PubInfo {
   darts: boolean,
   pool: boolean,
   gambling: boolean,
-  wetherspoons: boolean
+  wetherspoons: boolean,
+  coordinates: number[]
 }
