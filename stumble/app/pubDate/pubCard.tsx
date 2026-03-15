@@ -2,7 +2,8 @@
 import { useDrag } from '@use-gesture/react';
 import { useSpring, animated } from '@react-spring/web';
 import { PubInfo } from "../pubinfo"
-import { useState } from 'react';
+import { ElevenLabsClient, play } from '@elevenlabs/elevenlabs-js';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 interface Props {
@@ -12,6 +13,26 @@ interface Props {
 }
 
 export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
+
+    const elevenlabs = new ElevenLabsClient({
+        apiKey: "sk_c3f70490da750098ba9bc8b9c13dcdc931a987deb68a6994",
+    });
+    
+    useEffect(() => {
+        const f = async () => {
+            const audio = await elevenlabs.textToSpeech.convert(
+                'lKMAeQD7Brvj7QCWByqK',
+                {
+                    text: info.name,
+                    modelId: 'eleven_multilingual_v2',
+                    outputFormat: 'mp3_44100_128',
+                }
+            );
+            // @ts-expect-error
+            await play(audio);
+        }
+        f()
+    })
     
     const [style, api] = useSpring(() => ({x : 0}));
     const bind = useDrag(({ active, down, movement: [mx], direction: [xDir] }) => {
