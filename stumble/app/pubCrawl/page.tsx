@@ -21,7 +21,7 @@ export default function PubCrawl() {
     const {choices, setChoices} = useContext(ChoiceContext);
 
     const extractLocation = (pubIndex: number): Pub => {
-        const pubData : PubInfo = pubs[pubIndex-1];
+        const pubData : PubInfo = pubs[pubIndex];
         return {
             name: pubData.name,
             latitude: pubData.coordinates[0],
