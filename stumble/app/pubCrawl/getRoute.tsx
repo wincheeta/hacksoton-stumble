@@ -4,15 +4,32 @@ export interface RouteInfo {
   distanceValue: number;
   durationValue: number;
   polyline?: string;
+  optimizedOrder?: number[]; 
 }
+export interface Pub{
+    name: string;
+    latitude: number;
+    longitude: number;
+    }
 
 export const calculateRoute = async (
-  origin: { latitude: number; longitude: number },
-  destination: { latitude: number; longitude: number }
+  origin: Pub,
+  destination: Pub,
+  pubs: Pub[] = []
 ): Promise<RouteInfo | null> => {
-  const apiKey = "AIzaSyDdOFS4s2OAzrb2pRBzltg71Jre2ow28po"
+  
+  const Norigin = { latitude: origin.latitude, longitude: origin.longitude };
+  const Ndestination = { latitude: destination.latitude, longitude: destination.longitude };
+  const intermediates = pubs.map(pb => ({
+    location: { latLng: { latitude: pb.latitude, longitude: pb.longitude } }
+  }));
 
-  if (!apiKey) return null;
+  const apiKey = "AIzaSyDdOFS4s2OAzrb2pRBzltg71Jre2ow28po"; //hardcoded like a genius
+
+  if (!apiKey) {
+    console.error("Google Maps API key is missing!");
+    return null;
+  }
 
   const response = await fetch(
     'https://routes.googleapis.com/directions/v2:computeRoutes',
@@ -22,31 +39,36 @@ export const calculateRoute = async (
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask':
-          'routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline',
+          'routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline,routes.optimizedIntermediateWaypointIndex',
       },
       body: JSON.stringify({
-        origin: { location: { latLng: origin } },
-        destination: { location: { latLng: destination } },
+        origin: { location: { latLng: Norigin } },
+        destination: { location: { latLng: Ndestination } },
+        intermediates: intermediates, 
+        optimizeWaypointOrder: true,  // api to optimises order of pubs inbetween
         travelMode: 'WALK',
         units: 'METRIC',
-        computeAlternativeRoutes: false
       }),
     }
   );
 
   const data = await response.json();
-  console.log("API Response:", data);
+
+  if (data.error) {
+    console.error("Google API Error:", data.error);
+    return null;
+  }
+
   if (!data.routes?.length) return null;
 
   const route = data.routes[0];
 
   return {
     distance: `${(route.distanceMeters / 1000).toFixed(1)} km`,
-    duration: `${Math.round(
-      parseInt(route.duration.replace('s', '')) / 60
-    )} min`,
+    duration: `${Math.round(parseInt(route.duration.replace('s', '')) / 60)} min`,
     distanceValue: route.distanceMeters,
     durationValue: parseInt(route.duration.replace('s', '')),
     polyline: route.polyline?.encodedPolyline,
+    optimizedOrder: route.optimizedIntermediateWaypointIndex,
   };
 };
