@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { calculateRoute, Pub } from "./getRoute";
 import { decodeRoutePolyline } from "./polylineDecoder";
@@ -10,9 +11,8 @@ import RouteViewer from "./routeViewer";
 import { PubInfo } from "../pubinfo";
 import { pubs } from "../pubDate/pubs";
 import { getFurthest } from "./calculate_route";
-import { all } from "axios";
-import { set } from "@elevenlabs/elevenlabs-js/core/schemas";
-
+import Link from "next/link";
+import { href } from "react-router";
 
 export default function PubCrawl() {
     const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
@@ -62,7 +62,8 @@ export default function PubCrawl() {
   return (
     <div className="inline-flex w-full min-h-screen items-center justify-center bg-neutral-700 items-center">
       <RouteViewer order={optimisedPubs}></RouteViewer>
-      <main className="flex gap-10 min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">      
+      <main className="flex gap-10 min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">
+        <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-5 w-1/2 self-center" onClick={() => window.location.href="/"} />
         <button 
           onClick={handleShowRoute} 
           className="flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5"
