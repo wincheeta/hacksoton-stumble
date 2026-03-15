@@ -1,29 +1,29 @@
-Stags,
-Mitre,
-Crown Inn,
-Brewhouse & Kitchen,
-Charlie's Cabana,
-Gordon Arms
-Bookshop Alehouse
-Hobbit
-Clowns
-Guide Dog
-Shooting Star
-5 Rivers Sport Bar & Grill
-The Rockstone
-Bottle & Stoat
-Dirty Barrel
-Shenanigans
-The Cricketers
-Overdraft Beer & Tacos
-Raven & Bine
+Stags, !
+Mitre, !
+Crown Inn, !
+Brewhouse & Kitchen, !
+Charlie's Cabana, !
+Gordon Arms !
+Bookshop Alehouse !
+Hobbit !
+Clowns !
+Guide Dog !
+Shooting Star !
+5 Rivers Sport Bar & Grill !
+The Rockstone ! 
+Bottle & Stoat !
+Dirty Barrel !
+Shenanigans !
+The Cricketers !
+Overdraft Beer & Tacos !
+Raven & Bine !
 The Social
 Funky Flamingo
 Harmony House
 London Road Brew House
 The Alexandra
 The Lion
-Giddy Bridge
+Giddy Bridge !
 Engineers Arms
 The Prince of Wales PH
 Belgium And Blues

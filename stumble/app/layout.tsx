@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+"use client"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { useState, createContext } from "react";
+import { PubInfo } from "./pubinfo";
+
+export const ChoiceContext = createContext<{choices: PubInfo[]; setChoices: (choices: PubInfo[]) => void}>({choices: [], setChoices: (x : any) => {}});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,23 +16,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Stumble",
-  description: "Dating app for pub crawls",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const [choices, setChoices] = useState<PubInfo[]>([]);
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <ChoiceContext.Provider value={ {choices, setChoices} }>
+                      {children}
+          </ChoiceContext.Provider>
+        </body>
     </html>
   );
 }
