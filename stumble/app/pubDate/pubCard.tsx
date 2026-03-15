@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 interface Props {
     info: PubInfo
-    choiceFunc: (id: number) => void
+    choiceFunc: (id: number, b : boolean) => void
     ind: number
 }
 
@@ -38,12 +38,11 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
     const bind = useDrag(({ active, down, movement: [mx], direction: [xDir] }) => {
       if (mx > 500 && !active) 
       {
-        console.log("Nah");
+        choiceFunc(info.id, false)
       }
       else if (mx < -500 && !active)
       {
-        console.log("Yah");
-        choiceFunc(info.id)
+        choiceFunc(info.id, true)
       }
       api.start({x: down ? mx : 0});
     })
