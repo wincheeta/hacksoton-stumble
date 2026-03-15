@@ -9,6 +9,8 @@ import RouteViewer from "./routeViewer";
 import { PubInfo } from "../pubinfo";
 import { pubs } from "../pubDate/pubs";
 import { getFurthest } from "./calculate_route";
+import Link from "next/link";
+import { href } from "react-router";
 
 export default function PubCrawl() {
     const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
