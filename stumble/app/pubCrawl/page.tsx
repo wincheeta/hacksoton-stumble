@@ -18,17 +18,20 @@ export default function PubCrawl() {
     const [destination, setDestination] = useState<Pub | null>(null);
     const [otherPubs, setotherPubs] = useState<Pub[]>([]);
     const [optimisedPubs, setoptimisedPubs] = useState<number[]>([]);
+    const {choices, setChoices} = useContext(ChoiceContext);
 
-    const extractLocation = (pubInfo: PubInfo): Pub => {
+    const extractLocation = (pubIndex: number): Pub => {
+        const pubData : PubInfo = pubs[pubIndex-1];
         return {
-            name: pubInfo.name,
-            latitude: pubInfo.coordinates[0],
-            longitude: pubInfo.coordinates[1],
+            name: pubData.name,
+            latitude: pubData.coordinates[0],
+            longitude: pubData.coordinates[1],
         };
     }
 
     const handleShowRoute = async () => {
-      const allPubs : Pub[] = pubs.map( p => extractLocation(p) );
+      const allPubs : Pub[] = choices.map( p => extractLocation(p) );
+      console.log(choices);
       // console.log(allPubs[0]);
       // console.log({name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 })
 
