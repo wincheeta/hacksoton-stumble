@@ -2,11 +2,7 @@ import { useContext } from "react"
 import { ChoiceContext } from "../layout"
 import { pubs } from "../pubDate/pubs"
 
-interface Props {
-    order: number[];
-}
-
-export default function RouteViewer({ order } : Props) {
+export default function RouteViewer({ order } : { order : number[] }) {
 
     const {choices, setChoices} = useContext(ChoiceContext);
 
