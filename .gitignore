@@ -1,3 +1,4 @@
 .env
 /stumble/app/pubCrawl/wtf
 package-lock.json
+stumble/package-lock.json
