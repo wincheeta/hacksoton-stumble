@@ -30,6 +30,7 @@ export const pubs: PubInfo[] = [
     pool: true,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.934710494453675, -1.3973272038238047],
   },
   {
     id: 2,
@@ -60,6 +61,7 @@ export const pubs: PubInfo[] = [
     pool: true,
     gambling: true,
     wetherspoons: false,
+      coordinates: [50.926875597043946, -1.3908227589074944],
   },
   {
     id: 3,
@@ -90,6 +92,7 @@ export const pubs: PubInfo[] = [
     pool: true,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91881406395595, -1.3951751389770684],
   },
   {
     id: 4,
@@ -120,6 +123,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.93187715899524, -1.4008021787732579],
   },
   {
     id: 5,
@@ -150,6 +154,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.93150504422611, -1.3998797748725496],
   },
   {
     id: 6,
@@ -172,6 +177,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.92379068582144, -1.3949902177665412],
   },
   {
     id: 7,
@@ -194,6 +200,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: true,
     wetherspoons: false,
+    coordinates: [50.92348371287412, -1.3951407793745836],
   },
   {
     id: 8,
@@ -216,6 +223,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.92057295976252, -1.3955316030867404],
   },
   {
     id: 9,
@@ -246,6 +254,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: true,
     wetherspoons: true,
+    coordinates: [50.91085362293647, -1.4047097345684443],
   },
   {
     id: 10,
@@ -268,6 +277,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91829906264296, -1.3953283200111952],
   },
   {
     id: 11,
@@ -298,6 +308,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.9177784701726, -1.3972277800972701],
   },
   {
     id: 12,
@@ -328,6 +339,7 @@ export const pubs: PubInfo[] = [
     pool: true,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91652101129402, -1.395951829120969],
   },
   {
     id: 13,
@@ -357,6 +369,7 @@ export const pubs: PubInfo[] = [
     pool: true,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91609797711538, -1.396117488700005],
   },
   {
     id: 14,
@@ -387,6 +400,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.915263364505066, -1.397695176060864],
   },
   {
     id: 15,
@@ -417,6 +431,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91358456735644, -1.406093143565256],
   },
   {
     id: 16,
@@ -447,6 +462,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91301751903028, -1.4063687012430932],
   },
   {
     id: 17,
@@ -477,6 +493,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91312591872356, -1.4046667315566197],
   },
   {
     id: 18,
@@ -507,6 +524,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91297222185584, -1.404960092094986],
   },
   {
     id: 19,
@@ -537,6 +555,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.91288405387533, -1.4056815773409315],
   },
   {
     id: 20,
@@ -567,6 +586,7 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: false,
     wetherspoons: false,
+    coordinates: [50.9127438642296, -1.4049707459293526],
   },
   {
     id: 21,
@@ -597,5 +617,6 @@ export const pubs: PubInfo[] = [
     pool: false,
     gambling: true,
     wetherspoons: true,
+    coordinates: [50.900631433995635, -1.4037093877449456],
   },
 ];

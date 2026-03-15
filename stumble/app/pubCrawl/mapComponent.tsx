@@ -96,7 +96,6 @@ const MapComponent: React.FC<MapData> = ({
     const newMarkers: maplibregl.Marker[] = [];
 
     if (otherPubs.length > 0) {
-        // If Google gave us an optimized order, use it. Otherwise, use the original array order.
         const pubsToDraw = optimisedPubs.length > 0 
             ? optimisedPubs.map((index) => otherPubs[index])
             : otherPubs;
@@ -104,7 +103,6 @@ const MapComponent: React.FC<MapData> = ({
             
         pubsToDraw.unshift(origin!);
         pubsToDraw.push(destination!);
-        console.log(pubsToDraw)
         pubsToDraw.forEach((pub, i) => {
             const markerEl = createNumberedMarker(i + 1);
             const popup = new maplibregl.Popup({ offset: 25 }).setHTML(`<strong>Pub ${i + 1}: ${pub.name}</strong>`);

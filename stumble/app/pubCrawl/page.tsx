@@ -7,53 +7,64 @@ import MapComponent from "./mapComponent";
 import { useContext } from "react";
 import { ChoiceContext } from "../layout";
 import RouteViewer from "./routeViewer";
+import { PubInfo } from "../pubinfo";
+import { pubs } from "../pubDate/pubs";
+import { all } from "axios";
+
 
 export default function PubCrawl() {
-  const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
-  const [origin, setOrigin] = useState<Pub | null>(null);
-  const [destination, setDestination] = useState<Pub | null>(null);
-  const [otherPubs, setotherPubs] = useState<Pub[]>([]);
-  const [optimisedPubs, setoptimisedPubs] = useState<number[]>([]);
+    const [routeGeoJSON, setRouteGeoJSON] = useState<any>(null);
+    const [origin, setOrigin] = useState<Pub | null>(null);
+    const [destination, setDestination] = useState<Pub | null>(null);
+    const [otherPubs, setotherPubs] = useState<Pub[]>([]);
+    const [optimisedPubs, setoptimisedPubs] = useState<number[]>([]);
+
+    const extractLocation = (pubInfo: PubInfo): Pub => {
+        return {
+            name: pubInfo.name,
+            latitude: pubInfo.coordinates[0],
+            longitude: pubInfo.coordinates[1],
+        };
+    }
 
     const handleShowRoute = async () => {
-        const start : Pub = {name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 }; 
-        const end : Pub = {name: "jesters", latitude: 50.91819492126443, longitude: -1.3952395822603454, };
-        
-        const pubs : Pub[]= [
-            { name: "giddy", latitude: 50.91099766491743, longitude:  -1.4044846195047285 }, 
-            { name: "hobbit", latitude: 50.91917963101398, longitude: -1.395235639641838 },
-            { name: "london house brewery", latitude: 50.91258583312872, longitude: -1.403600277820489 },
-            { name: "the stag", latitude: 50.93473942771124, longitude: -1.3973102315799517},
-            { name: "brewhouse and kitchen", latitude: 50.93140505168394, longitude: -1.3998451997593504}
-        ];
+      const allPubs : Pub[] = pubs.map( p => extractLocation(p) );
+      // console.log(allPubs[0]);
+      // console.log({name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 })
 
-        setOrigin(start);
-        setDestination(end);
-        setotherPubs(pubs);
+      const start : Pub = allPubs[0];
+      const end : Pub = allPubs[1];
+      const other : Pub[] = allPubs.slice(2);
+      // const start : Pub = {name: "mitre", latitude: 50.9267580317646, longitude: -1.3909037625748435 }; 
+      // const end : Pub = {name: "jesters", latitude: 50.91819492126443, longitude: -1.3952395822603454, };
+      
+      // const other : Pub[]= [
+      //     { name: "giddy", latitude: 50.91099766491743, longitude:  -1.4044846195047285 }, 
+      //     { name: "hobbit", latitude: 50.91917963101398, longitude: -1.395235639641838 },
+      //     { name: "london house brewery", latitude: 50.91258583312872, longitude: -1.403600277820489 },
+      //     { name: "the stag", latitude: 50.93473942771124, longitude: -1.3973102315799517},
+      //     { name: "brewhouse and kitchen", latitude: 50.93140505168394, longitude: -1.3998451997593504}
+      // ];
 
-        const route = await calculateRoute(start, end, pubs);
+      setOrigin(start);
+      setDestination(end);
+      setotherPubs(other);
 
-        if (!route?.polyline) return;
-        
-        // console.log("Optimal Order:", route.optimizedOrder); 
-        setoptimisedPubs(route.optimizedOrder || []);
+      const route = await calculateRoute(start, end, other);
 
-        const geoJSON = decodeRoutePolyline(
-            route.polyline,
-            route.distance,
-            route.duration
-        );
+      if (!route?.polyline) return;
+      
+      // console.log("Optimal Order:", route.optimizedOrder); 
+      setoptimisedPubs(route.optimizedOrder || []);
 
-        setRouteGeoJSON(geoJSON);
-        };
+      const geoJSON = decodeRoutePolyline(
+          route.polyline,
+          route.distance,
+          route.duration
+      );
 
-  const {choices, setChoices} = useContext(ChoiceContext);
-  console.log(choices);
-
-  function makeList()
-  {
-    return choices.map(c => <li key={c.name}>{c.name}</li>);
-  }
+      setRouteGeoJSON(geoJSON);
+      };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-700 items-center">

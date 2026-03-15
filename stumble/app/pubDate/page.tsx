@@ -21,10 +21,12 @@ export default function Home() {
 
   function addPubChoice(index : number, id : number)
   {
-    setChoices( [...choices, id ] );
-    setPubList( p => {p.splice(id,1); return p} );
-    console.log(index, id )
+    setChoices( p => p.concat(id) );
+    setPubList( p => p.filter( i => (id-1).toString() != i.key ) );
+    console.log(index, id)
   }
+
+  const indList = Array(pubs.length).fill(0).map( (x,i) => i ).sort(() => Math.random() - 0.5);
 
   useEffect(() => {
     const indList = Array(pubs.length).fill(0).map( (_,i) => i ).sort(() => Math.random() - 0.5);
@@ -32,6 +34,7 @@ export default function Home() {
     setOrder( indList )
     setPubList( indexList );
     console.log( indexList, indList)
+    console.log(choices);
     }, [])
 
   return (
