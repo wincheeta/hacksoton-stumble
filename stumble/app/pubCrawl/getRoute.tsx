@@ -4,7 +4,8 @@ export interface RouteInfo {
   distanceValue: number;
   durationValue: number;
   polyline?: string;
-  optimizedOrder?: number[]; 
+  optimizedOrder?: number[];
+  legDurations?: number[];
 }
 export interface Pub{
     name: string;
@@ -39,7 +40,7 @@ export const calculateRoute = async (
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask':
-          'routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline,routes.optimizedIntermediateWaypointIndex',
+          'routes.duration,routes.distanceMeters,routes.polyline.encodedPolyline,routes.optimizedIntermediateWaypointIndex,routes.legs.duration',
       },
       body: JSON.stringify({
         origin: { location: { latLng: Norigin } },
@@ -63,6 +64,10 @@ export const calculateRoute = async (
 
   const route = data.routes[0];
 
+  const legDurationsMins = route.legs 
+    ? route.legs.map((leg: any) => Math.round(parseInt(leg.duration.replace('s', '')) / 60))
+    : [];
+
   return {
     distance: `${(route.distanceMeters / 1000).toFixed(1)} km`,
     duration: `${Math.round(parseInt(route.duration.replace('s', '')) / 60)} min`,
@@ -70,5 +75,6 @@ export const calculateRoute = async (
     durationValue: parseInt(route.duration.replace('s', '')),
     polyline: route.polyline?.encodedPolyline,
     optimizedOrder: route.optimizedIntermediateWaypointIndex,
+    legDurations: legDurationsMins,
   };
 };
