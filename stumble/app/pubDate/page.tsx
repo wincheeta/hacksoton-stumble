@@ -10,11 +10,6 @@ import { PubInfo } from "../pubinfo";
 
 export default function Home() {
 
-  const info = useState(() => {
-    const i = Math.floor(Math.random() * pubs.length)
-    return pubs[i]
-  })[0];
-
   const [pubList, setPubList] = useState<JSX.Element[]>([]);
   const [order, setOrder] = useState<number[]>([]);
   const {choices, setChoices} = useContext(ChoiceContext);
@@ -31,6 +26,7 @@ export default function Home() {
     const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x, b) => addPubChoice(indList[j], x, b) } key={j} ind={indList[j]+5}/> ) );
     setOrder( indList )
     setPubList( indexList );
+    setChoices([])
     console.log( indexList, indList)
     console.log(choices);
     }, [])
