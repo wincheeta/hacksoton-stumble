@@ -52,8 +52,8 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
       <animated.div {...bind()} className="w-full flex flex-col items-left gap-5 px-5 py-5 self-center rounded-xl bg-neutral-500 select-none drag-none absolute" style={ {...style, ...{zIndex: ind, y:300} } }>
         <div className='flex flex-col w-full self-center select-none drag-none relative'>
             <div className="flex flex-row gap-4 text-4xl font-bold text-yellow-200 px-5 py-5 rounded-lg w-max absolute bottom-0 left-0">
-                {info.name}
-                {info.wetherspoons ? <img className="icon" src={"/spoonsCheck.svg"} alt="Wetherspoons"></img> : null}
+                <p className="rounded-xl bg-black p-2">{info.name}</p>
+                {info.wetherspoons ? <img className="icon" src={"/spoonsCheck.svg"} alt="Wetherspoons" draggable="false"></img> : null}
             </div>
                 <img src={info.image} className="w-full self-center rounded-lg overlap max-h-70 object-cover min-h-70" draggable="false"></img>
             
@@ -64,9 +64,9 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
             Rating: {info.rating} / 5.0
         </div>
         <div className = "flex flex-row gap-5 justify-start">
-            { info.darts ? <img src="/drunkDarts.svg" className='icon'></img> : null }
-            { info.pool ? <img src="/drunkPool.svg" className='icon'></img> : null }
-            { info.gambling ? <img src="/drunkGambling.svg" className='icon'></img> : null }
+            { info.darts ? <img src="/drunkDarts.svg" className='icon' draggable="false"></img> : null }
+            { info.pool ? <img src="/drunkPool.svg" className='icon' draggable="false"></img> : null }
+            { info.gambling ? <img src="/drunkGambling.svg" className='icon' draggable="false"></img> : null }
             <div className="icon"></div>
         </div>
       </animated.div>

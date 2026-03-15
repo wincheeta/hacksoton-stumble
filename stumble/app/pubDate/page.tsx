@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     const indList = Array(pubs.length).fill(0).map( (_,i) => i ).sort(() => Math.random() - 0.5);
-    const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x, b) => addPubChoice(indList[j], x, b) } key={j} ind={indList[j]}/> ) );
+    const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x, b) => addPubChoice(indList[j], x, b) } key={j} ind={indList[j]+5}/> ) );
     setOrder( indList )
     setPubList( indexList );
     console.log( indexList, indList)
@@ -45,6 +45,9 @@ export default function Home() {
         <div className="flex flex-col w-full items-center gap-10">
             <div className="w-full self-center select-none drag-none relative">
             {pubList}
+            </div>
+            <div className="flex w-full self-center select-none drag-none relative justify-center items-center" style={{zIndex: 0}}>
+              <p>No more pubs</p>
             </div>
         </div>
         <div className = "h-60"></div>
