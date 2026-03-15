@@ -10,11 +10,6 @@ import { PubInfo } from "../pubinfo";
 
 export default function Home() {
 
-  const info = useState(() => {
-    const i = Math.floor(Math.random() * pubs.length)
-    return pubs[i]
-  })[0];
-
   const [pubList, setPubList] = useState<JSX.Element[]>([]);
   const [order, setOrder] = useState<number[]>([]);
   const {choices, setChoices} = useContext(ChoiceContext);
@@ -31,6 +26,7 @@ export default function Home() {
     const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x, b) => addPubChoice(indList[j], x, b) } key={j} ind={indList[j]+5}/> ) );
     setOrder( indList )
     setPubList( indexList );
+    setChoices([])
     console.log( indexList, indList)
     console.log(choices);
     }, [])
@@ -41,16 +37,15 @@ export default function Home() {
           AI Jail
         </Link>
         <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">
-        <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-10 w-1/2 self-center" />
+        <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-5 w-1/2 self-center" />
         <div className="flex flex-col w-full items-center gap-10">
             <div className="w-full self-center select-none drag-none relative">
             {pubList}
             </div>
-            <div className="flex w-full self-center select-none drag-none relative justify-center items-center" style={{zIndex: 0}}>
+            <div className="flex w-full self-center select-none drag-none relative justify-center items-center h-40" style={{zIndex: 0}}>
               <p>No more pubs</p>
             </div>
         </div>
-        <div className = "h-60"></div>
         <div className = "h-60"></div>
         <div className = "h-40"></div>
         <Link href="/pubCrawl" className = "flex flex-row w-full h-20 justify-center items-center text-3xl font-bold rounded-xl bg-yellow-200 text-neutral-700 py-5">
