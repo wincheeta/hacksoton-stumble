@@ -36,11 +36,11 @@ export const PubCard = ( { info, choiceFunc, ind } : Props ) => {
                 {info.name}
                 {info.wetherspoons ? <img className="icon" src={"/spoonsCheck.svg"} alt="Wetherspoons"></img> : null}
             </div>
-                <img src={info.image} className="w-full self-center rounded-lg overlap max-h-70 object-cover" draggable="false"></img>
+                <img src={info.image} className="w-full self-center rounded-lg overlap max-h-70 object-cover min-h-70" draggable="false"></img>
             
         </div>
         <div className="text-2xl text-yellow-200 rounded-lg w-max">
-            Position: {info.location}
+            <p className="text-wrap w-8/10">Position: {info.location}</p>
             <br></br>
             Rating: {info.rating} / 5.0
         </div>

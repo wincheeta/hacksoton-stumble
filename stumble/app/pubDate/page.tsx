@@ -45,7 +45,7 @@ export default function Home() {
         <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-10 w-1/2 self-center" />
         <div className="flex flex-col w-full items-center gap-10">
             <div className="w-full self-center select-none drag-none relative">
-            {pubList }
+            {pubList}
             </div>
         </div>
         <div className = "h-60"></div>
