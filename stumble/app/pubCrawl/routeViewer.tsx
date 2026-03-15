@@ -43,7 +43,9 @@ export default function RouteViewer({ routeSequence, legDurations }: Props) {
 
     const arrivalTimes: string[] = [];
     
-    let currentMinutes = Math.min(timeToMinutes(closingTimeStr),timeToMinutes("00:00")) - 45; // dont arrive later the midnight that would be silly
+    const timeInPub = 45;
+
+    let currentMinutes = Math.min(timeToMinutes(closingTimeStr),timeToMinutes("00:00")) - timeInPub; // dont arrive later the midnight that would be silly
     arrivalTimes[routeSequence.length - 1] = minutesToTime(currentMinutes);
 
     for (let i = routeSequence.length - 2; i >= 0; i--) {
