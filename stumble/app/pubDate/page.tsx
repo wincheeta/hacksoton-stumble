@@ -19,16 +19,16 @@ export default function Home() {
   const [order, setOrder] = useState<number[]>([]);
   const {choices, setChoices} = useContext(ChoiceContext);
 
-  function addPubChoice(index : number, id : number)
+  function addPubChoice(index : number, id : number, choice : boolean)
   {
-    setChoices( p => p.concat(id) );
+    if (choice) { setChoices( p => p.concat(id) ) }
     setPubList( p => p.filter( i => (id-1).toString() != i.key ) );
     console.log(index, id)
   }
 
   useEffect(() => {
     const indList = Array(pubs.length).fill(0).map( (_,i) => i ).sort(() => Math.random() - 0.5);
-    const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x) => addPubChoice(indList[j], x) } key={j} ind={indList[j]}/> ) );
+    const indexList = pubs.map( (p, j) => ( <PubCard info={p} choiceFunc={ (x, b) => addPubChoice(indList[j], x, b) } key={j} ind={indList[j]}/> ) );
     setOrder( indList )
     setPubList( indexList );
     console.log( indexList, indList)
