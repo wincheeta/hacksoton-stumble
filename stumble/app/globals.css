@@ -3,8 +3,8 @@
 :root {
   --background: #f6f6f6;
   --foreground: #171717;
-  --col1: #ffdb5b;
-  --col2: #3b3b3b;
+  --col1: #fff085;
+  --col2: #404040;
   font-family: "CashMarket", Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -29,4 +29,31 @@ body {
 .icon {
   width: 50px;
   height: 50px;
+}
+
+@layer base {
+  /* Firefox */
+  * {
+    scrollbar-color: var(--col1) var(--col2);
+  }
+
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--col2);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--col1);
+    border-radius: 10px;
+    border: 2px solid var(--col2);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: var(--col1);
+  }
 }
