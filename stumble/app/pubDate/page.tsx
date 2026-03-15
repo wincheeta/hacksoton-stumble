@@ -22,7 +22,7 @@ export default function Home() {
   function addPubChoice(index : number, id : number, choice : boolean)
   {
     if (choice) { setChoices( p => p.concat(id) ) }
-    setPubList( p => p.filter( i => (id-1).toString() != i.key ) );
+    setPubList( p => p.filter( i => (id).toString() != i.key ) );
     console.log(index, id)
   }
 
