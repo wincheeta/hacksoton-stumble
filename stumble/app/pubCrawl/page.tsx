@@ -60,7 +60,7 @@ export default function PubCrawl() {
       };
 
   return (
-    <div className="inline-flex w-full min-h-screen items-center justify-center bg-neutral-700 items-center">
+    <div className="inline-flex w-full min-h-screen justify-center bg-neutral-700 items-start">
       <RouteViewer order={optimisedPubs}></RouteViewer>
       <main className="flex gap-10 min-h-screen w-full max-w-3xl flex-col items-center justify-start py-10 px-13 bg-neutral-700 sm:items-start">
         <Image src="/StumbledWithText.svg" alt="Stumble Logo" width={200} height={200} className="my-5 w-1/2 self-center" onClick={() => window.location.href="/"} />
